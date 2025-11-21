@@ -1,8 +1,12 @@
-﻿cl : Command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  stdafx.cpp
-cl : Command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  Shaders.cpp
-  NewTrainingFramework.cpp
-  Generating Code...
-NewTrainingFramework.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
-  NewTrainingFramework.vcxproj -> D:\training gameloft\proiecte_training\proiect_2015\NewTrainingFramework_2015\\BIN-Nvidia\NewTrainingFramework.exe
+﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  Camera.cpp
+C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\Camera.cpp(85,52): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  (compiling source file '/Camera.cpp')
+  
+C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\Camera.cpp(95,52): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  (compiling source file '/Camera.cpp')
+  
+C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\Camera.cpp(105,52): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  (compiling source file '/Camera.cpp')
+  
+  NewTrainingFramework.vcxproj -> C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\BIN-Nvidia\NewTrainingFramework.exe

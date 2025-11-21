@@ -1,13 +1,19 @@
-﻿cl : Command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
   stdafx.cpp
-cl : Command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  TGA.cpp
-  Math.cpp
-d:\training gameloft\proiecte_training\proiect_2015\newtrainingframework_2015\utilities\math.cpp(10): warning C4244: 'return': conversion from 'double' to 'GLfloat', possible loss of data
-d:\training gameloft\proiecte_training\proiect_2015\newtrainingframework_2015\utilities\math.cpp(104): warning C4244: 'return': conversion from 'double' to 'GLfloat', possible loss of data
-d:\training gameloft\proiecte_training\proiect_2015\newtrainingframework_2015\utilities\math.cpp(208): warning C4244: 'return': conversion from 'double' to 'GLfloat', possible loss of data
+cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
   esUtil_win.cpp
   esUtil.cpp
   esShader.cpp
+  TGA.cpp
+  Math.cpp
+C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\Utilities\Math.cpp(10,13): warning C4244: 'return': conversion from 'double' to 'GLfloat', possible loss of data
+  (compiling source file '/Math.cpp')
+  
+C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\Utilities\Math.cpp(104,13): warning C4244: 'return': conversion from 'double' to 'GLfloat', possible loss of data
+  (compiling source file '/Math.cpp')
+  
+C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\Utilities\Math.cpp(208,13): warning C4244: 'return': conversion from 'double' to 'GLfloat', possible loss of data
+  (compiling source file '/Math.cpp')
+  
   Generating Code...
-  Utilities.vcxproj -> D:\training gameloft\proiecte_training\proiect_2015\NewTrainingFramework_2015\\BIN-Nvidia\Utilities.lib
+  Utilities.vcxproj -> C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\BIN-Nvidia\Utilities.lib

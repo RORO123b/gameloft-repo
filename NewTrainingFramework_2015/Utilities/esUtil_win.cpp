@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include <windows.h>
 #include "esUtil.h"
-
-
+#include <windowsx.h>
+#include "MouseEvents.h"
 
 // Main window procedure
 LRESULT WINAPI ESWindowProc ( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam ) 
@@ -46,7 +46,50 @@ LRESULT WINAPI ESWindowProc ( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam
 				  esContext->keyFunc ( esContext, (unsigned char) wParam, false );
 		  }
 		  break;
-         
+      case WM_LBUTTONDOWN:
+          {
+          ESContext* esContext = (ESContext*)(LONG_PTR)GetWindowLongPtr(hWnd, GWL_USERDATA);
+          if (esContext && esContext->mouseFunc)
+              {
+                  auto x = GET_X_LPARAM(lParam);
+                  auto y = GET_Y_LPARAM(lParam);
+                  esContext->mouseFunc(esContext, MOUSE_LEFT, BTN_DOWN, x, y);
+              }
+          }
+          break;
+      case WM_LBUTTONUP:
+      {
+          ESContext* esContext = (ESContext*)(LONG_PTR)GetWindowLongPtr(hWnd, GWL_USERDATA);
+          if (esContext && esContext->mouseFunc)
+          {
+              auto x = GET_X_LPARAM(lParam);
+              auto y = GET_Y_LPARAM(lParam);
+              esContext->mouseFunc(esContext, MOUSE_LEFT, BTN_UP, x, y);
+          }
+      }
+      break;
+      case WM_RBUTTONDOWN:
+      {
+          ESContext* esContext = (ESContext*)(LONG_PTR)GetWindowLongPtr(hWnd, GWL_USERDATA);
+          if (esContext && esContext->mouseFunc) {
+              auto x = GET_X_LPARAM(lParam);
+              auto y = GET_Y_LPARAM(lParam);
+			  esContext->mouseFunc(esContext, MOUSE_RIGHT, BTN_DOWN, x, y);
+          }
+      }
+      break;
+      case WM_RBUTTONUP:
+      {
+          ESContext* esContext = (ESContext*)(LONG_PTR)GetWindowLongPtr(hWnd, GWL_USERDATA);
+          if (esContext && esContext->mouseFunc)
+          {
+              auto x = GET_X_LPARAM(lParam);
+              auto y = GET_Y_LPARAM(lParam);
+              esContext->mouseFunc(esContext, MOUSE_RIGHT, BTN_UP, x, y);
+          }
+      }
+      break;
+
       default: 
          lRet = DefWindowProc (hWnd, uMsg, wParam, lParam); 
          break; 

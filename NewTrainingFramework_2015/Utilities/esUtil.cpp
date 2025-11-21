@@ -110,7 +110,7 @@ GLboolean ESUTIL_API esCreateWindow ( ESContext *esContext, const char* title, G
        EGL_GREEN_SIZE,     6,
        EGL_BLUE_SIZE,      5,
        EGL_ALPHA_SIZE,     (flags & ES_WINDOW_ALPHA) ? 8 : EGL_DONT_CARE,
-       EGL_DEPTH_SIZE,     (flags & ES_WINDOW_DEPTH) ? 8 : EGL_DONT_CARE,
+       //EGL_DEPTH_SIZE,     (flags & ES_WINDOW_DEPTH) ? 8 : EGL_DONT_CARE,
        EGL_STENCIL_SIZE,   (flags & ES_WINDOW_STENCIL) ? 8 : EGL_DONT_CARE,
        EGL_SAMPLE_BUFFERS, (flags & ES_WINDOW_MULTISAMPLE) ? 1 : 0,
        EGL_NONE
@@ -176,7 +176,11 @@ void ESUTIL_API esRegisterKeyFunc ( ESContext *esContext,
    esContext->keyFunc = keyFunc;
 }
 
-
+void ESUTIL_API esRegisterMouseFunc(ESContext* esContext,
+    void (ESCALLBACK* mouseFunc) (ESContext*, MouseButtons btn, MouseEvents event, int x, int y))
+{
+    esContext->mouseFunc = mouseFunc;
+}
 
 // esLogMessage()
 //    Log an error message to the debug output for the platform

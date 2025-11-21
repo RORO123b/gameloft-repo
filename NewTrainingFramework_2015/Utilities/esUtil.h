@@ -1,6 +1,7 @@
 #pragma once
 #include <GLES2/gl2.h>
 #include <EGL/egl.h>
+#include "MouseEvents.h"
 
 //  Macros
 
@@ -48,6 +49,7 @@ public:
    void (ESCALLBACK *drawFunc) ( ESContext * );
    void (ESCALLBACK *keyFunc) ( ESContext *, unsigned char, bool );
    void (ESCALLBACK *updateFunc) ( ESContext *, float deltaTime );
+   void (ESCALLBACK* mouseFunc) (ESContext*, MouseButtons btn, MouseEvents event, int x, int y );
 };
 
 
@@ -101,6 +103,10 @@ void ESUTIL_API esRegisterUpdateFunc ( ESContext *esContext, void (ESCALLBACK *u
 //
 void ESUTIL_API esRegisterKeyFunc ( ESContext *esContext, 
                                     void (ESCALLBACK *drawFunc) ( ESContext*, unsigned char, bool ) );
+
+void ESUTIL_API esRegisterMouseFunc (ESContext* esContext,
+    void (ESCALLBACK* drawFunc) (ESContext*, MouseButtons btn, MouseEvents event, int x, int y));
+
 //
 /// \brief Log a message to the debug output for the platform
 /// \param formatStr Format string for error log.  

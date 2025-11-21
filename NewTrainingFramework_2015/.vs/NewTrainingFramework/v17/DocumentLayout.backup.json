@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FC024EC8-32F4-4657-A2CB-14D2B3A931F8}|NewTrainingFramework\\NewTrainingFramework.vcxproj|C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\NewTrainingFramework\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FC024EC8-32F4-4657-A2CB-14D2B3A931F8}|NewTrainingFramework\\NewTrainingFramework.vcxproj|solutionrelative:NewTrainingFramework\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC024EC8-32F4-4657-A2CB-14D2B3A931F8}|NewTrainingFramework\\NewTrainingFramework.vcxproj|C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\NewTrainingFramework\\NewTrainingFramework.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FC024EC8-32F4-4657-A2CB-14D2B3A931F8}|NewTrainingFramework\\NewTrainingFramework.vcxproj|solutionrelative:NewTrainingFramework\\NewTrainingFramework.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D44529E-F7DD-4454-8EAD-9AFD857F53B4}|Utilities\\Utilities.vcxproj|C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\esUtil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0D44529E-F7DD-4454-8EAD-9AFD857F53B4}|Utilities\\Utilities.vcxproj|solutionrelative:Utilities\\esUtil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D44529E-F7DD-4454-8EAD-9AFD857F53B4}|Utilities\\Utilities.vcxproj|C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\MouseEvents.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0D44529E-F7DD-4454-8EAD-9AFD857F53B4}|Utilities\\Utilities.vcxproj|solutionrelative:Utilities\\MouseEvents.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D44529E-F7DD-4454-8EAD-9AFD857F53B4}|Utilities\\Utilities.vcxproj|C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\esUtil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0D44529E-F7DD-4454-8EAD-9AFD857F53B4}|Utilities\\Utilities.vcxproj|solutionrelative:Utilities\\esUtil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D44529E-F7DD-4454-8EAD-9AFD857F53B4}|Utilities\\Utilities.vcxproj|C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\esUtil_win.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0D44529E-F7DD-4454-8EAD-9AFD857F53B4}|Utilities\\Utilities.vcxproj|solutionrelative:Utilities\\esUtil_win.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Camera.cpp",
+              "DocumentMoniker": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\NewTrainingFramework\\Camera.cpp",
+              "RelativeDocumentMoniker": "NewTrainingFramework\\Camera.cpp",
+              "ToolTip": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\NewTrainingFramework\\Camera.cpp",
+              "RelativeToolTip": "NewTrainingFramework\\Camera.cpp",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAAHAAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-21T08:17:42.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "esUtil_win.cpp",
+              "DocumentMoniker": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\esUtil_win.cpp",
+              "RelativeDocumentMoniker": "Utilities\\esUtil_win.cpp",
+              "ToolTip": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\esUtil_win.cpp",
+              "RelativeToolTip": "Utilities\\esUtil_win.cpp",
+              "ViewState": "AgIAADIAAAAAAAAAAAAAAFcAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-21T07:47:48.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "esUtil.cpp",
+              "DocumentMoniker": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\esUtil.cpp",
+              "RelativeDocumentMoniker": "Utilities\\esUtil.cpp",
+              "ToolTip": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\esUtil.cpp",
+              "RelativeToolTip": "Utilities\\esUtil.cpp",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAhwLAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-21T07:41:14.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "esUtil.h",
+              "DocumentMoniker": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\esUtil.h",
+              "RelativeDocumentMoniker": "Utilities\\esUtil.h",
+              "ToolTip": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\esUtil.h",
+              "RelativeToolTip": "Utilities\\esUtil.h",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAAAGsAAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-21T07:28:53.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MouseEvents.h",
+              "DocumentMoniker": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\MouseEvents.h",
+              "RelativeDocumentMoniker": "Utilities\\MouseEvents.h",
+              "ToolTip": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\MouseEvents.h",
+              "RelativeToolTip": "Utilities\\MouseEvents.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-21T07:26:17.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NewTrainingFramework.cpp",
+              "DocumentMoniker": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\NewTrainingFramework\\NewTrainingFramework.cpp",
+              "RelativeDocumentMoniker": "NewTrainingFramework\\NewTrainingFramework.cpp",
+              "ToolTip": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\NewTrainingFramework\\NewTrainingFramework.cpp",
+              "RelativeToolTip": "NewTrainingFramework\\NewTrainingFramework.cpp",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAAK0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-16T07:07:28.117Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
