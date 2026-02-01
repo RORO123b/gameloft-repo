@@ -1,18 +1,18 @@
 ﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
   NewTrainingFramework.cpp
-C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\NewTrainingFramework.cpp(28,12): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\NewTrainingFramework.cpp(30,12): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compiling source file '/NewTrainingFramework.cpp')
   
-C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\NewTrainingFramework.cpp(31,2): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\NewTrainingFramework.cpp(33,2): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compiling source file '/NewTrainingFramework.cpp')
   
-C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\NewTrainingFramework.cpp(38,3): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\NewTrainingFramework.cpp(40,3): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compiling source file '/NewTrainingFramework.cpp')
   
-C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\NewTrainingFramework.cpp(53,2): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\NewTrainingFramework.cpp(55,2): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compiling source file '/NewTrainingFramework.cpp')
   
-C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\NewTrainingFramework.cpp(61,3): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\NewTrainingFramework.cpp(63,3): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compiling source file '/NewTrainingFramework.cpp')
   
   NewTrainingFramework.vcxproj -> C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\BIN-Nvidia\NewTrainingFramework.exe

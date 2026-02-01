@@ -2,6 +2,7 @@
 //
 #include "stdafx.h"
 #include "../Utilities/utilities.h" 
+#include "../Utilities/TGA.h"
 #include "Vertex.h"
 #include "Shaders.h"
 #include <conio.h>
@@ -13,6 +14,7 @@
 GLuint modelVboId;
 GLuint modelIboId;
 GLuint lineVboId;
+GLuint idTexture;
 int numIndices;
 
 Shaders myShaders;
@@ -71,6 +73,7 @@ void ReadNfg(const char* filename, std::vector<Vertex>& vertices, std::vector<un
 int Init(ESContext* esContext)
 {
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+	glEnable(GL_DEPTH_TEST);
 
 	std::vector<Vertex> vertices;
 	std::vector<unsigned short> indices;
@@ -89,15 +92,43 @@ int Init(ESContext* esContext)
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned short), indices.data(), GL_STATIC_DRAW);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
+	// Load texture
+	int width, height, bpp;
+	char* pixelArray = LoadTGA("../../NewResourcesPacket/Textures/Croco.tga", &width, &height, &bpp);
+
+	if (pixelArray != NULL)
+	{
+		glGenTextures(1, &idTexture);
+		glBindTexture(GL_TEXTURE_2D, idTexture);
+
+		GLenum format = (bpp == 24) ? GL_RGB : GL_RGBA;
+		glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, pixelArray);
+
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+		glBindTexture(GL_TEXTURE_2D, 0);
+
+		delete[] pixelArray;
+	}
+
 	return modelShader.Init("../Resources/Shaders/modelShaderVS.vs", "../Resources/Shaders/modelShaderFS.fs");
 }
 
 void Draw(ESContext* esContext)
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glEnable(GL_DEPTH_TEST);
 
 	glUseProgram(modelShader.program);
+
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, idTexture);
+
+	if (modelShader.textureUniform != -1) {
+		glUniform1i(modelShader.textureUniform, 0);
+	}
 
 	glBindBuffer(GL_ARRAY_BUFFER, modelVboId);
 	
@@ -112,7 +143,12 @@ void Draw(ESContext* esContext)
 
 	if (modelShader.positionAttribute != -1) {
 		glEnableVertexAttribArray(modelShader.positionAttribute);
-		glVertexAttribPointer(modelShader.positionAttribute, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, pos));
+		glVertexAttribPointer(modelShader.positionAttribute, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)0);
+	}
+
+	if (modelShader.uvAttribute != -1) {
+		glEnableVertexAttribArray(modelShader.uvAttribute);
+		glVertexAttribPointer(modelShader.uvAttribute, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)(15 * sizeof(GLfloat)));
 	}
 
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, modelIboId);
@@ -120,8 +156,13 @@ void Draw(ESContext* esContext)
 	
 	if (modelShader.positionAttribute != -1) {
 		glDisableVertexAttribArray(modelShader.positionAttribute);
-	}																															
+	}
 	
+	if (modelShader.uvAttribute != -1) {
+		glDisableVertexAttribArray(modelShader.uvAttribute);
+	}
+	
+	glBindTexture(GL_TEXTURE_2D, 0);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 
@@ -237,6 +278,7 @@ void CleanUp()
 {
 	glDeleteBuffers(1, &modelVboId);
 	glDeleteBuffers(1, &modelIboId);
+	glDeleteTextures(1, &idTexture);
 }
 
 int _tmain(int argc, _TCHAR* argv[])
