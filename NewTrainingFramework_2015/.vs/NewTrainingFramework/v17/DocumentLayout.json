@@ -3,12 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{FC024EC8-32F4-4657-A2CB-14D2B3A931F8}|NewTrainingFramework\\NewTrainingFramework.vcxproj|C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\NewTrainingFramework\\NewTrainingFramework.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FC024EC8-32F4-4657-A2CB-14D2B3A931F8}|NewTrainingFramework\\NewTrainingFramework.vcxproj|solutionrelative:NewTrainingFramework\\NewTrainingFramework.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC024EC8-32F4-4657-A2CB-14D2B3A931F8}|NewTrainingFramework\\NewTrainingFramework.vcxproj|C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\NewTrainingFramework\\Shaders.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FC024EC8-32F4-4657-A2CB-14D2B3A931F8}|NewTrainingFramework\\NewTrainingFramework.vcxproj|solutionrelative:NewTrainingFramework\\Shaders.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC024EC8-32F4-4657-A2CB-14D2B3A931F8}|NewTrainingFramework\\NewTrainingFramework.vcxproj|C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\NewTrainingFramework\\Shaders.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FC024EC8-32F4-4657-A2CB-14D2B3A931F8}|NewTrainingFramework\\NewTrainingFramework.vcxproj|solutionrelative:NewTrainingFramework\\Shaders.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FC024EC8-32F4-4657-A2CB-14D2B3A931F8}|NewTrainingFramework\\NewTrainingFramework.vcxproj|C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\NewTrainingFramework\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{FC024EC8-32F4-4657-A2CB-14D2B3A931F8}|NewTrainingFramework\\NewTrainingFramework.vcxproj|solutionrelative:NewTrainingFramework\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FC024EC8-32F4-4657-A2CB-14D2B3A931F8}|NewTrainingFramework\\NewTrainingFramework.vcxproj|C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\NewTrainingFramework\\NewTrainingFramework.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FC024EC8-32F4-4657-A2CB-14D2B3A931F8}|NewTrainingFramework\\NewTrainingFramework.vcxproj|solutionrelative:NewTrainingFramework\\NewTrainingFramework.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{FC024EC8-32F4-4657-A2CB-14D2B3A931F8}|NewTrainingFramework\\NewTrainingFramework.vcxproj|C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Resources\\Shaders\\modelShaderFS.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{FC024EC8-32F4-4657-A2CB-14D2B3A931F8}|NewTrainingFramework\\NewTrainingFramework.vcxproj|solutionrelative:Resources\\Shaders\\modelShaderFS.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC024EC8-32F4-4657-A2CB-14D2B3A931F8}|NewTrainingFramework\\NewTrainingFramework.vcxproj|C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Resources\\Shaders\\modelShaderVS.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{FC024EC8-32F4-4657-A2CB-14D2B3A931F8}|NewTrainingFramework\\NewTrainingFramework.vcxproj|solutionrelative:Resources\\Shaders\\modelShaderVS.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC024EC8-32F4-4657-A2CB-14D2B3A931F8}|NewTrainingFramework\\NewTrainingFramework.vcxproj|C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\NewTrainingFramework\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FC024EC8-32F4-4657-A2CB-14D2B3A931F8}|NewTrainingFramework\\NewTrainingFramework.vcxproj|solutionrelative:NewTrainingFramework\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC024EC8-32F4-4657-A2CB-14D2B3A931F8}|NewTrainingFramework\\NewTrainingFramework.vcxproj|C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Resources\\Shaders\\TriangleShaderFS.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{FC024EC8-32F4-4657-A2CB-14D2B3A931F8}|NewTrainingFramework\\NewTrainingFramework.vcxproj|solutionrelative:Resources\\Shaders\\TriangleShaderFS.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D44529E-F7DD-4454-8EAD-9AFD857F53B4}|Utilities\\Utilities.vcxproj|C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\esUtil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0D44529E-F7DD-4454-8EAD-9AFD857F53B4}|Utilities\\Utilities.vcxproj|solutionrelative:Utilities\\esUtil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D44529E-F7DD-4454-8EAD-9AFD857F53B4}|Utilities\\Utilities.vcxproj|C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\esUtil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -17,10 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0D44529E-F7DD-4454-8EAD-9AFD857F53B4}|Utilities\\Utilities.vcxproj|C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\MouseEvents.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0D44529E-F7DD-4454-8EAD-9AFD857F53B4}|Utilities\\Utilities.vcxproj|solutionrelative:Utilities\\MouseEvents.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D44529E-F7DD-4454-8EAD-9AFD857F53B4}|Utilities\\Utilities.vcxproj|C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\esUtil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0D44529E-F7DD-4454-8EAD-9AFD857F53B4}|Utilities\\Utilities.vcxproj|solutionrelative:Utilities\\esUtil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D44529E-F7DD-4454-8EAD-9AFD857F53B4}|Utilities\\Utilities.vcxproj|C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\esUtil_win.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -34,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,46 +66,103 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
+              "Title": "Camera.h",
+              "DocumentMoniker": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\NewTrainingFramework\\Camera.h",
+              "RelativeDocumentMoniker": "NewTrainingFramework\\Camera.h",
+              "ToolTip": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\NewTrainingFramework\\Camera.h",
+              "RelativeToolTip": "NewTrainingFramework\\Camera.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-31T16:30:17.98Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "modelShaderVS.vs",
+              "DocumentMoniker": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Resources\\Shaders\\modelShaderVS.vs",
+              "RelativeDocumentMoniker": "Resources\\Shaders\\modelShaderVS.vs",
+              "ToolTip": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Resources\\Shaders\\modelShaderVS.vs",
+              "RelativeToolTip": "Resources\\Shaders\\modelShaderVS.vs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-01-31T16:29:20.729Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TriangleShaderFS.fs",
+              "DocumentMoniker": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Resources\\Shaders\\TriangleShaderFS.fs",
+              "RelativeDocumentMoniker": "Resources\\Shaders\\TriangleShaderFS.fs",
+              "ToolTip": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Resources\\Shaders\\TriangleShaderFS.fs",
+              "RelativeToolTip": "Resources\\Shaders\\TriangleShaderFS.fs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-01-31T16:29:01.822Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "modelShaderFS.fs",
+              "DocumentMoniker": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Resources\\Shaders\\modelShaderFS.fs",
+              "RelativeDocumentMoniker": "Resources\\Shaders\\modelShaderFS.fs",
+              "ToolTip": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Resources\\Shaders\\modelShaderFS.fs",
+              "RelativeToolTip": "Resources\\Shaders\\modelShaderFS.fs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-01-31T16:28:51.806Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Shaders.h",
+              "DocumentMoniker": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\NewTrainingFramework\\Shaders.h",
+              "RelativeDocumentMoniker": "NewTrainingFramework\\Shaders.h",
+              "ToolTip": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\NewTrainingFramework\\Shaders.h",
+              "RelativeToolTip": "NewTrainingFramework\\Shaders.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-31T16:28:43.19Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Shaders.cpp",
+              "DocumentMoniker": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\NewTrainingFramework\\Shaders.cpp",
+              "RelativeDocumentMoniker": "NewTrainingFramework\\Shaders.cpp",
+              "ToolTip": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\NewTrainingFramework\\Shaders.cpp",
+              "RelativeToolTip": "NewTrainingFramework\\Shaders.cpp",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-01-31T16:28:37.528Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Camera.cpp",
               "DocumentMoniker": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\NewTrainingFramework\\Camera.cpp",
               "RelativeDocumentMoniker": "NewTrainingFramework\\Camera.cpp",
               "ToolTip": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\NewTrainingFramework\\Camera.cpp",
               "RelativeToolTip": "NewTrainingFramework\\Camera.cpp",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-21T08:17:42.275Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-21T08:17:42.275Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "esUtil_win.cpp",
-              "DocumentMoniker": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\esUtil_win.cpp",
-              "RelativeDocumentMoniker": "Utilities\\esUtil_win.cpp",
-              "ToolTip": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\esUtil_win.cpp",
-              "RelativeToolTip": "Utilities\\esUtil_win.cpp",
-              "ViewState": "AgIAADIAAAAAAAAAAAAAAFcAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-21T07:47:48.209Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "esUtil.cpp",
               "DocumentMoniker": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\esUtil.cpp",
               "RelativeDocumentMoniker": "Utilities\\esUtil.cpp",
               "ToolTip": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\esUtil.cpp",
               "RelativeToolTip": "Utilities\\esUtil.cpp",
-              "ViewState": "AgIAAJEAAAAAAAAAAAAhwLAAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAiwB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-21T07:41:14.872Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-21T07:41:14.872Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "esUtil.h",
               "DocumentMoniker": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\esUtil.h",
               "RelativeDocumentMoniker": "Utilities\\esUtil.h",
@@ -89,12 +170,11 @@
               "RelativeToolTip": "Utilities\\esUtil.h",
               "ViewState": "AgIAAFUAAAAAAAAAAAAAAGsAAABgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-21T07:28:53.478Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-21T07:28:53.478Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "MouseEvents.h",
               "DocumentMoniker": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\MouseEvents.h",
               "RelativeDocumentMoniker": "Utilities\\MouseEvents.h",
@@ -102,21 +182,32 @@
               "RelativeToolTip": "Utilities\\MouseEvents.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-21T07:26:17.473Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-21T07:26:17.473Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "NewTrainingFramework.cpp",
               "DocumentMoniker": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\NewTrainingFramework\\NewTrainingFramework.cpp",
               "RelativeDocumentMoniker": "NewTrainingFramework\\NewTrainingFramework.cpp",
               "ToolTip": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\NewTrainingFramework\\NewTrainingFramework.cpp",
               "RelativeToolTip": "NewTrainingFramework\\NewTrainingFramework.cpp",
-              "ViewState": "AgIAAI0AAAAAAAAAAAAAAK0AAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAuwGwAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-16T07:07:28.117Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "esUtil_win.cpp",
+              "DocumentMoniker": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\esUtil_win.cpp",
+              "RelativeDocumentMoniker": "Utilities\\esUtil_win.cpp",
+              "ToolTip": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\esUtil_win.cpp",
+              "RelativeToolTip": "Utilities\\esUtil_win.cpp",
+              "ViewState": "AgIAADIAAAAAAAAAAAAAAFcAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-21T07:47:48.209Z"
             }
           ]
         }

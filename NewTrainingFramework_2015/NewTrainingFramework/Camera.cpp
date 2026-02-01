@@ -5,15 +5,15 @@
 
 Camera::Camera()
 {
-    position = Vector3(0.0f, 0.0f, -2.0f);
+    position = Vector3(0.0f, 0.0f, 200.0f);
     target = Vector3(0.0f, 0.0f, 0.0f);
     up = Vector3(0.0f, 1.0f, 0.0f);
 
     fov = 0.785398f;
     nearPlane = 0.2f;
-    farPlane = 10.0f;
+    farPlane = 1000.0f;
 
-    moveSpeed = 0.1f;
+    moveSpeed = 100.0f;
     rotateSpeed = 1.0f;
 
 	perspectiveMatrix.SetPerspective(fov, Globals::screenWidth / Globals::screenHeight, nearPlane, farPlane);
@@ -115,7 +115,7 @@ void Camera::rotateOx(int sens)
 	Matrix mRotateOX = Matrix().SetRotationX(rotateSpeed * deltaTime * sens);
 	Vector4 localUp = Vector4(0.0f, 1.0f, 0.0f, 0.0f);
     Vector4 rotatedLocalUp = localUp * mRotateOX;
-    up = Vector3(rotatedLocalUp * worldMatrix);`
+    up = Vector3(rotatedLocalUp * worldMatrix);
     up = up.Normalize();
     Vector4 localTarget = Vector4(0.0f, 0.0f, -(target - position).Length(), 1.0f);
     Vector4 rotatedTarget = localTarget * mRotateOX;

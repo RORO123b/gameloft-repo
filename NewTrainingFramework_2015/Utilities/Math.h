@@ -12,6 +12,7 @@ public:
 	Vector2(GLfloat _x, GLfloat _y) : x(_x), y(_y) {}
 	Vector2(GLfloat * pArg) : x(pArg[0]), y(pArg[1]) {}
 	Vector2(Vector2 & vector) : x(vector.x), y(vector.y) {}
+	Vector2(const Vector2& vector) : x(vector.x), y(vector.y) {}
 
 	//Vector's operations
 	GLfloat Length();
@@ -49,6 +50,7 @@ public:
 	Vector3(GLfloat _x, GLfloat _y, GLfloat _z) : x(_x), y(_y), z(_z) {}
 	Vector3(GLfloat * pArg) : x(pArg[0]), y(pArg[1]), z(pArg[2]) {}
 	Vector3(Vector3 & vector) : x(vector.x), y(vector.y), z(vector.z) {}
+	Vector3(const Vector3& v) : x(v.x), y(v.y), z(v.z) {}
 	Vector3(Vector4& v4);
 	GLfloat Length();
 	Vector3 & Normalize();

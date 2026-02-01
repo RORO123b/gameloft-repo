@@ -1,116 +1,131 @@
 // NewTrainingFramework.cpp : Defines the entry point for the console application.
 //
-
 #include "stdafx.h"
-#include "../Utilities/utilities.h" // if you use STL, please include this line AFTER all other include
+#include "../Utilities/utilities.h" 
 #include "Vertex.h"
 #include "Shaders.h"
 #include <conio.h>
 #include "Globals.h"
 #include "Camera.h"
+#include <vector>
+#include <cstdio>
 
-GLuint vboId;
-GLuint lineVboId ;
+GLuint modelVboId;
+GLuint modelIboId;
+GLuint lineVboId;
+int numIndices;
 
 Shaders myShaders;
 Shaders myShaders2;
+Shaders modelShader;
 float angle;
 float step = 0.5f;
 float totalTime = 0.0f;
 Camera myCamera;
 
-int Init ( ESContext *esContext )
+void ReadNfg(const char* filename, std::vector<Vertex>& vertices, std::vector<unsigned short>& indices)
 {
-	glClearColor ( 0.0f, 0.0f, 0.0f, 0.0f );
+	FILE* f = fopen(filename, "r");
 
-	//triangle data (heap)
-	Vertex verticesData[6];
-	Vertex lineVerticesData[2];
+	int numVertices = 0;
+	fscanf(f, "NrVertices: %d", &numVertices);
 
-	verticesData[0].pos.x =  -0.5f;  verticesData[0].pos.y =  0.5f;  verticesData[0].pos.z =  0.0f;
-	verticesData[1].pos.x = -0.5f;  verticesData[1].pos.y = -0.5f;  verticesData[1].pos.z =  0.0f;
-	verticesData[2].pos.x =  0.5f;  verticesData[2].pos.y = -0.5f;  verticesData[2].pos.z =  0.0f;
+	for (int i = 0; i < numVertices; ++i)
+	{
+		Vertex v;
+		int index;
 
-	verticesData[0].color.x = 1.0f; verticesData[0].color.y = 0.0f; verticesData[0].color.z = 0.0f;
-	verticesData[1].color.x = 0.0f; verticesData[1].color.y = 1.0f; verticesData[1].color.z = 0.0f;
-	verticesData[2].color.x = 0.0f; verticesData[2].color.y = 0.0f; verticesData[2].color.z = 1.0f;
+		fscanf(f, " %d. pos:[%f, %f, %f]; norm:[%f, %f, %f]; binorm:[%f, %f, %f]; tgt:[%f, %f, %f]; uv:[%f, %f];",
+			&index,
+			&v.pos.x, &v.pos.y, &v.pos.z,
+			&v.norm.x, &v.norm.y, &v.norm.z,
+			&v.binorm.x, &v.binorm.y, &v.binorm.z,
+			&v.tgt.x, &v.tgt.y, &v.tgt.z,
+			&v.uv.x, &v.uv.y
+		);
 
-	verticesData[3].pos.x = 0.5f;  verticesData[3].pos.y = 0.5f;  verticesData[3].pos.z = 0.0f;
-	verticesData[4].pos.x = -0.5f;  verticesData[4].pos.y = 0.5f;  verticesData[4].pos.z = 0.0f;
-	verticesData[5].pos.x = 0.5f;  verticesData[5].pos.y = -0.5f;  verticesData[5].pos.z = 0.0f;
+		v.color = Vector3(1.0f, 1.0f, 1.0f);
 
-	verticesData[3].color.x = 0.0f; verticesData[3].color.y = 1.0f; verticesData[3].color.z = 0.0f;
-	verticesData[4].color.x = 1.0f; verticesData[4].color.y = 0.0f; verticesData[4].color.z = 0.0f;
-	verticesData[5].color.x = 0.0f; verticesData[5].color.y = 0.0f; verticesData[5].color.z = 1.0f;
+		vertices.push_back(v);
+	}
 
-	lineVerticesData[0].pos.x = 0.0f;  lineVerticesData[0].pos.y = 1.0f;  lineVerticesData[0].pos.z = 0.0f;
-	lineVerticesData[1].pos.x = 0.0f;  lineVerticesData[1].pos.y = -1.0f;  lineVerticesData[1].pos.z = 0.0f;
+	int numTriangles = 0;
+	fscanf(f, " NrIndices: %d", &numTriangles);
+	numTriangles /= 3;
 
-	lineVerticesData[0].color.x = 1.0f; lineVerticesData[0].color.y = 1.0f; lineVerticesData[0].color.z = 1.0f;
-	lineVerticesData[1].color.x = 1.0f; lineVerticesData[1].color.y = 1.0f; lineVerticesData[1].color.z = 1.0f;
+	for (int i = 0; i < numTriangles; ++i)
+	{
+		int index;
+		unsigned short idx1, idx2, idx3;
 
-	//buffer object
-	glGenBuffers(1, &vboId);
-	glBindBuffer(GL_ARRAY_BUFFER, vboId);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(verticesData), verticesData, GL_STATIC_DRAW);
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
+		fscanf(f, " %d. %hu, %hu, %hu", &index, &idx1, &idx2, &idx3);
 
-	glGenBuffers(1, &lineVboId );
-	glBindBuffer(GL_ARRAY_BUFFER, lineVboId );
-	glBufferData(GL_ARRAY_BUFFER, sizeof(lineVerticesData), lineVerticesData, GL_STATIC_DRAW);
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
+		indices.push_back(idx1);
+		indices.push_back(idx2);
+		indices.push_back(idx3);
+	}
 
-	//creation of shaders and program 
-	return myShaders.Init("../Resources/Shaders/TriangleShaderVS.vs", "../Resources/Shaders/TriangleShaderFS.fs") || myShaders2.Init("../Resources/Shaders/LineShaderVS.vs", "../Resources/Shaders/LineShaderFS.fs");
-
+	fclose(f);
 }
 
-void Draw ( ESContext *esContext )
+int Init(ESContext* esContext)
 {
+	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
-	glClear(GL_COLOR_BUFFER_BIT);
+	std::vector<Vertex> vertices;
+	std::vector<unsigned short> indices;
 
-	glUseProgram(myShaders.program);
+	ReadNfg("../../NewResourcesPacket/Models/Croco.nfg", vertices, indices);
 
-	glBindBuffer(GL_ARRAY_BUFFER, vboId);
-	
-	if(myShaders.positionAttribute != -1)
-	{
-		glEnableVertexAttribArray(myShaders.positionAttribute);
-		glVertexAttribPointer(myShaders.positionAttribute, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
-	}
+	numIndices = indices.size();
 
-	Matrix mRotation = myCamera.viewMatrix * myCamera.perspectiveMatrix;
-	if(myShaders.colorAttribute != -1) {
-		glEnableVertexAttribArray(myShaders.colorAttribute);
-		glVertexAttribPointer(myShaders.colorAttribute, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)(sizeof(Vector3)));
-	}
-	
-	if(myShaders.matrixUniform != -1) {
-		glUniformMatrix4fv(myShaders.matrixUniform, 1, GL_FALSE, (float*)(mRotation.m));
-	}
-
-	glDrawArrays(GL_TRIANGLES, 0, 6);
-
-	glUseProgram(myShaders2.program);
-
-	glBindBuffer(GL_ARRAY_BUFFER, lineVboId);
-
-	if (myShaders2.positionAttribute != -1)
-	{
-		glEnableVertexAttribArray(myShaders2.positionAttribute);
-		glVertexAttribPointer(myShaders2.positionAttribute, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
-	}
-
-	if (myShaders2.colorAttribute != -1) {
-		glEnableVertexAttribArray(myShaders2.colorAttribute);
-		glVertexAttribPointer(myShaders2.colorAttribute, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)(sizeof(Vector3)));
-	}
-
-	glDrawArrays(GL_LINES, 0, 2);
+	glGenBuffers(1, &modelVboId);
+	glBindBuffer(GL_ARRAY_BUFFER, modelVboId);
+	glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(Vertex), vertices.data(), GL_STATIC_DRAW);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-	eglSwapBuffers ( esContext->eglDisplay, esContext->eglSurface );
+	glGenBuffers(1, &modelIboId);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, modelIboId);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned short), indices.data(), GL_STATIC_DRAW);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+
+	return modelShader.Init("../Resources/Shaders/modelShaderVS.vs", "../Resources/Shaders/modelShaderFS.fs");
+}
+
+void Draw(ESContext* esContext)
+{
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glEnable(GL_DEPTH_TEST);
+
+	glUseProgram(modelShader.program);
+
+	glBindBuffer(GL_ARRAY_BUFFER, modelVboId);
+	
+	Matrix mModel;
+	mModel.SetRotationY(angle);
+
+	Matrix mvp = mModel * myCamera.viewMatrix * myCamera.perspectiveMatrix;
+
+	if (modelShader.mvpUniform != -1) {
+		glUniformMatrix4fv(modelShader.mvpUniform, 1, GL_FALSE, (float*)(mvp.m));
+	}
+
+	if (modelShader.positionAttribute != -1) {
+		glEnableVertexAttribArray(modelShader.positionAttribute);
+		glVertexAttribPointer(modelShader.positionAttribute, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, pos));
+	}
+
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, modelIboId);
+	glDrawElements(GL_TRIANGLES, numIndices, GL_UNSIGNED_SHORT, 0);
+	
+	if (modelShader.positionAttribute != -1) {
+		glDisableVertexAttribArray(modelShader.positionAttribute);
+	}																															
+	
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+	eglSwapBuffers(esContext->eglDisplay, esContext->eglSurface);
 }
 
 void Update ( ESContext *esContext, float deltaTime )
@@ -220,7 +235,8 @@ void Mouse(ESContext* esContext, MouseButtons btn, MouseEvents event, int x, int
 
 void CleanUp()
 {
-	glDeleteBuffers(1, &vboId);
+	glDeleteBuffers(1, &modelVboId);
+	glDeleteBuffers(1, &modelIboId);
 }
 
 int _tmain(int argc, _TCHAR* argv[])

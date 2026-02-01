@@ -1,10 +1,4 @@
 ﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  stdafx.cpp
-cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  esUtil_win.cpp
-  esUtil.cpp
-  esShader.cpp
-  TGA.cpp
   Math.cpp
 C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\Utilities\Math.cpp(10,13): warning C4244: 'return': conversion from 'double' to 'GLfloat', possible loss of data
   (compiling source file '/Math.cpp')
@@ -15,5 +9,4 @@ C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\Utilities
 C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\Utilities\Math.cpp(208,13): warning C4244: 'return': conversion from 'double' to 'GLfloat', possible loss of data
   (compiling source file '/Math.cpp')
   
-  Generating Code...
   Utilities.vcxproj -> C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\BIN-Nvidia\Utilities.lib

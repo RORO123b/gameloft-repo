@@ -1,0 +1,26 @@
+# Ignore Visual Studio temporary files, build results, and caches
+.vs/
+Debug/
+Release/
+x64/
+*.obj
+*.pdb
+*.tlog
+*.log
+*.idb
+*.ipch
+*.db
+*.db-shm
+*.db-wal
+*.suo
+*.user
+*.opensdf
+*.sdf
+*.cache
+*.ilk
+*.aps
+
+# Ignore specific build folders shown in your logs
+BIN-Nvidia/
+NewTrainingFramework_2015/Debug-Nvidia/
+NewTrainingFramework_2015/Utilities/Debug-Nvidia/
