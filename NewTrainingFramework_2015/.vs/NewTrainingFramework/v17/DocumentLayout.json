@@ -54,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -67,8 +67,11 @@
               "ViewState": "AgIAAIoAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-21T07:47:48.209Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
@@ -78,14 +81,10 @@
               "RelativeDocumentMoniker": "Utilities\\esUtil.cpp",
               "ToolTip": "C:\\Users\\vboxuser\\source\\repos\\gameloft-repo\\NewTrainingFramework_2015\\Utilities\\esUtil.cpp",
               "RelativeToolTip": "Utilities\\esUtil.cpp",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAkwHAAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAkwGkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-02-01T10:04:56.365Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
@@ -97,8 +96,7 @@
               "RelativeToolTip": "glsl Resources\\Shaders\\modelShaderFS.fs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-02-01T09:53:34.547Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-01T09:53:34.547Z"
             },
             {
               "$type": "Document",
@@ -110,8 +108,7 @@
               "RelativeToolTip": "Resources\\Shaders\\modelShaderVS.vs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-01-31T16:29:20.729Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-31T16:29:20.729Z"
             },
             {
               "$type": "Document",
@@ -135,8 +132,7 @@
               "RelativeToolTip": "Resources\\Shaders\\modelShaderFS.fs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-01-31T16:28:51.806Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-31T16:28:51.806Z"
             },
             {
               "$type": "Document",
@@ -148,8 +144,7 @@
               "RelativeToolTip": "NewTrainingFramework\\Shaders.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-31T16:28:43.19Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-31T16:28:43.19Z"
             },
             {
               "$type": "Document",
@@ -161,8 +156,7 @@
               "RelativeToolTip": "NewTrainingFramework\\Shaders.cpp",
               "ViewState": "AgIAAAYAAAAAAAAAAAAkwBgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-01-31T16:28:37.528Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-31T16:28:37.528Z"
             },
             {
               "$type": "Document",
@@ -186,8 +180,7 @@
               "RelativeToolTip": "NewTrainingFramework\\NewTrainingFramework.cpp",
               "ViewState": "AgIAABEBAAAAAAAAAAAAACQBAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-16T07:07:28.117Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-16T07:07:28.117Z"
             },
             {
               "$type": "Document",
