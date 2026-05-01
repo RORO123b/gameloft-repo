@@ -1,5 +1,17 @@
 #pragma once
 #include "Camera.h"
+#include <map>
+#include <vector>
+#ifdef new
+#pragma message("WARNING: 'new' is a macro here!")
+#endif
+#include "rapidxml.hpp"
+#include "rapidxml_utils.hpp"
+#include "Globals.h"
+
+
+class SceneObject;
+
 class SceneManager
 {
 private:
@@ -11,7 +23,18 @@ public:
 	void InitWindow();
 	void Init();
 	static SceneManager* getInstance();
-	void Draw();
+	void Draw(ESContext* esContext);
 	void Update(float deltaTime);
-	~SceneManager()
+	~SceneManager();
+
+	std::map<int, SceneObject*> objects;
+	std::vector<Camera*> cameras;
+
+	Vector3 ambientColor = Vector3(0.2f, 0.2f, 0.2f);
+	float ambientRatio = 0.5f;
+
+	Camera* getActiveCamera();
+	int activeCamera = 0;
+	float totalTime;
+	float smallRadius, largeRadius;
 };

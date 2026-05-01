@@ -1,1 +1,98 @@
-﻿  NewTrainingFramework.vcxproj -> C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\BIN-Nvidia\NewTrainingFramework.exe
+﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  SceneManager.cpp
+C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\rapidxml_utils.hpp(40,25): warning C4244: 'initializing': conversion from 'std::streamoff' to 'size_t', possible loss of data
+  (compiling source file '/SceneManager.cpp')
+      C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\rapidxml_utils.hpp(40,25):
+      the template instantiation context (the oldest one first) is
+          C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\SceneManager.cpp(19,19):
+          see reference to class template instantiation 'rapidxml::file<char>' being compiled
+          C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\rapidxml_utils.hpp(28,9):
+          while compiling class template member function 'rapidxml::file<char>::file(const char *)'
+              C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\SceneManager.cpp(19,23):
+              see the first reference to 'rapidxml::file<char>::file' in 'SceneManager::Init'
+  
+C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\rapidxml.hpp(420,39): error C2061: syntax error: identifier 'mem'
+  (compiling source file '/SceneManager.cpp')
+      C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\rapidxml.hpp(420,39):
+      the template instantiation context (the oldest one first) is
+          C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\SceneManager.cpp(24,27):
+          see reference to class template instantiation 'rapidxml::xml_document<char>' being compiled
+          C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\rapidxml.hpp(1358,53):
+          see reference to class template instantiation 'rapidxml::memory_pool<Ch>' being compiled
+          with
+          [
+              Ch=char
+          ]
+          C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\rapidxml.hpp(415,23):
+          while compiling class template member function 'rapidxml::xml_node<Ch> *rapidxml::memory_pool<Ch>::allocate_node(rapidxml::node_type,const Ch *,const Ch *,size_t,size_t)'
+          with
+          [
+              Ch=char
+          ]
+              C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\rapidxml.hpp(2040,35):
+              see the first reference to 'rapidxml::memory_pool<Ch>::allocate_node' in 'rapidxml::xml_document<char>::parse_element'
+          with
+          [
+              Ch=char
+          ]
+              C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\rapidxml.hpp(2090,17):
+              see the first reference to 'rapidxml::xml_document<char>::parse_element' in 'rapidxml::xml_document<char>::parse_node'
+              C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\rapidxml.hpp(1404,44):
+              see the first reference to 'rapidxml::xml_document<char>::parse_node' in 'rapidxml::xml_document<char>::parse'
+              C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\SceneManager.cpp(25,14):
+              see the first reference to 'rapidxml::xml_document<char>::parse' in 'SceneManager::Init'
+  
+  ResourceManager.cpp
+C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\rapidxml_utils.hpp(40,25): warning C4244: 'initializing': conversion from 'std::streamoff' to 'size_t', possible loss of data
+  (compiling source file '/ResourceManager.cpp')
+      C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\rapidxml_utils.hpp(40,25):
+      the template instantiation context (the oldest one first) is
+          C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\ResourceManager.cpp(19,19):
+          see reference to class template instantiation 'rapidxml::file<char>' being compiled
+          C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\rapidxml_utils.hpp(28,9):
+          while compiling class template member function 'rapidxml::file<char>::file(const char *)'
+              C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\ResourceManager.cpp(19,23):
+              see the first reference to 'rapidxml::file<char>::file' in 'ResourceManager::Init'
+  
+C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\rapidxml.hpp(420,39): error C2061: syntax error: identifier 'mem'
+  (compiling source file '/ResourceManager.cpp')
+      C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\rapidxml.hpp(420,39):
+      the template instantiation context (the oldest one first) is
+          C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\ResourceManager.cpp(24,27):
+          see reference to class template instantiation 'rapidxml::xml_document<char>' being compiled
+          C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\rapidxml.hpp(1358,53):
+          see reference to class template instantiation 'rapidxml::memory_pool<Ch>' being compiled
+          with
+          [
+              Ch=char
+          ]
+          C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\rapidxml.hpp(415,23):
+          while compiling class template member function 'rapidxml::xml_node<Ch> *rapidxml::memory_pool<Ch>::allocate_node(rapidxml::node_type,const Ch *,const Ch *,size_t,size_t)'
+          with
+          [
+              Ch=char
+          ]
+              C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\rapidxml.hpp(2040,35):
+              see the first reference to 'rapidxml::memory_pool<Ch>::allocate_node' in 'rapidxml::xml_document<char>::parse_element'
+          with
+          [
+              Ch=char
+          ]
+              C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\rapidxml.hpp(2090,17):
+              see the first reference to 'rapidxml::xml_document<char>::parse_element' in 'rapidxml::xml_document<char>::parse_node'
+              C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\rapidxml.hpp(1404,44):
+              see the first reference to 'rapidxml::xml_document<char>::parse_node' in 'rapidxml::xml_document<char>::parse'
+              C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\ResourceManager.cpp(25,14):
+              see the first reference to 'rapidxml::xml_document<char>::parse' in 'ResourceManager::Init'
+  
+  Generating Code...
+  Compiling...
+  SceneObject.cpp
+C:\Users\vboxuser\source\repos\gameloft-repo\NewTrainingFramework_2015\NewTrainingFramework\SceneObject.cpp(56,20): warning C4018: '<': signed/unsigned mismatch
+  (compiling source file '/SceneObject.cpp')
+  
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Texture.cpp
+  Shader.cpp
+  Model.cpp

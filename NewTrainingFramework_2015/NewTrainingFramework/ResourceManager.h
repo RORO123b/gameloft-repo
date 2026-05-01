@@ -1,8 +1,9 @@
 #pragma once
 #include <map>
-#include "Shader.cpp"
-#include "Texture.cpp"
-#include "Model.cpp"
+#include "Shader.h"
+#include "Texture.h"
+#include "Model.h"
+
 
 class ResourceManager
 {
@@ -19,6 +20,10 @@ public:
     std::map<int, ShaderResource*> shaderResources;
     std::map<int, TextureResource*> textureResources;
 	std::map<int, ModelResource*> modelResources;
+
+    std::map<int, Model*> loadedModels;
+    std::map<int, Texture*> loadedTextures;
+    std::map<int, Shader*> loadedShaders;
 
     std::map<int, Shader*> shaders;
     std::map<int, Texture*> textures;
