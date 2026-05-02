@@ -10,176 +10,51 @@
 #include "Camera.h"
 #include <vector>
 #include <cstdio>
+#include "SceneObject.h"
+#include "ResourceManager.h"
+#include "SceneManager.h"
 
-GLuint modelVboId;
-GLuint modelIboId;
-GLuint lineVboId;
-GLuint idTexture;
-int numIndices;
-
-Shaders myShaders;
-Shaders myShaders2;
-Shaders modelShader;
-float angle;
-float step = 0.5f;
+GLuint vboId, vbold, iboId, modelVboId, modelIboId;
+GLuint textureId;
+Shader myShaders, lineShader, modelShader;
 float totalTime = 0.0f;
-Camera myCamera;
+const void* ptr_iboId;
+GLsizei indexCount;
+ResourceManager* rm;
+SceneManager* sm;
 
-void ReadNfg(const char* filename, std::vector<Vertex>& vertices, std::vector<unsigned short>& indices)
-{
-	FILE* f = fopen(filename, "r");
-
-	int numVertices = 0;
-	fscanf(f, "NrVertices: %d", &numVertices);
-
-	for (int i = 0; i < numVertices; ++i)
-	{
-		Vertex v;
-		int index;
-
-		fscanf(f, " %d. pos:[%f, %f, %f]; norm:[%f, %f, %f]; binorm:[%f, %f, %f]; tgt:[%f, %f, %f]; uv:[%f, %f];",
-			&index,
-			&v.pos.x, &v.pos.y, &v.pos.z,
-			&v.norm.x, &v.norm.y, &v.norm.z,
-			&v.binorm.x, &v.binorm.y, &v.binorm.z,
-			&v.tgt.x, &v.tgt.y, &v.tgt.z,
-			&v.uv.x, &v.uv.y
-		);
-
-		v.color = Vector3(1.0f, 1.0f, 1.0f);
-
-		vertices.push_back(v);
-	}
-
-	int numTriangles = 0;
-	fscanf(f, " NrIndices: %d", &numTriangles);
-	numTriangles /= 3;
-
-	for (int i = 0; i < numTriangles; ++i)
-	{
-		int index;
-		unsigned short idx1, idx2, idx3;
-
-		fscanf(f, " %d. %hu, %hu, %hu", &index, &idx1, &idx2, &idx3);
-
-		indices.push_back(idx1);
-		indices.push_back(idx2);
-		indices.push_back(idx3);
-	}
-
-	fclose(f);
-}
+Camera* myCamera;
 
 int Init(ESContext* esContext)
 {
+	rm = ResourceManager::getInstance();
+	rm->Init();
+
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+
+	sm = SceneManager::getInstance();
+	sm->Init();
+	myCamera = sm->getActiveCamera();
+
+
 	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-	std::vector<Vertex> vertices;
-	std::vector<unsigned short> indices;
-
-	ReadNfg("../../NewResourcesPacket/Models/Croco.nfg", vertices, indices);
-
-	numIndices = indices.size();
-
-	glGenBuffers(1, &modelVboId);
-	glBindBuffer(GL_ARRAY_BUFFER, modelVboId);
-	glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(Vertex), vertices.data(), GL_STATIC_DRAW);
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
-
-	glGenBuffers(1, &modelIboId);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, modelIboId);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned short), indices.data(), GL_STATIC_DRAW);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-
-	// Load texture
-	int width, height, bpp;
-	char* pixelArray = LoadTGA("../../NewResourcesPacket/Textures/Croco.tga", &width, &height, &bpp);
-
-	if (pixelArray != NULL)
-	{
-		glGenTextures(1, &idTexture);
-		glBindTexture(GL_TEXTURE_2D, idTexture);
-
-		GLenum format = (bpp == 24) ? GL_RGB : GL_RGBA;
-		glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, pixelArray);
-
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-		glBindTexture(GL_TEXTURE_2D, 0);
-
-		delete[] pixelArray;
-	}
-
-	return modelShader.Init("../Resources/Shaders/modelShaderVS.vs", "../Resources/Shaders/modelShaderFS.fs");
+	return 0;
 }
-
 void Draw(ESContext* esContext)
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	glUseProgram(modelShader.program);
-
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, idTexture);
-
-	if (modelShader.textureUniform != -1) {
-		glUniform1i(modelShader.textureUniform, 0);
-	}
-
-	glBindBuffer(GL_ARRAY_BUFFER, modelVboId);
-	
-	Matrix mModel;
-	mModel.SetRotationY(angle);
-
-	Matrix mvp = mModel * myCamera.viewMatrix * myCamera.perspectiveMatrix;
-
-	if (modelShader.mvpUniform != -1) {
-		glUniformMatrix4fv(modelShader.mvpUniform, 1, GL_FALSE, (float*)(mvp.m));
-	}
-
-	if (modelShader.positionAttribute != -1) {
-		glEnableVertexAttribArray(modelShader.positionAttribute);
-		glVertexAttribPointer(modelShader.positionAttribute, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)0);
-	}
-
-	if (modelShader.uvAttribute != -1) {
-		glEnableVertexAttribArray(modelShader.uvAttribute);
-		glVertexAttribPointer(modelShader.uvAttribute, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)(15 * sizeof(GLfloat)));
-	}
-
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, modelIboId);
-	glDrawElements(GL_TRIANGLES, numIndices, GL_UNSIGNED_SHORT, 0);
-	
-	if (modelShader.positionAttribute != -1) {
-		glDisableVertexAttribArray(modelShader.positionAttribute);
-	}
-	
-	if (modelShader.uvAttribute != -1) {
-		glDisableVertexAttribArray(modelShader.uvAttribute);
-	}
-	
-	glBindTexture(GL_TEXTURE_2D, 0);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	sm->Draw(esContext);
 
 	eglSwapBuffers(esContext->eglDisplay, esContext->eglSurface);
 }
 
-void Update ( ESContext *esContext, float deltaTime )
+void Update(ESContext* esContext, float deltaTime)
 {
-	totalTime += deltaTime;
-	if (totalTime > Globals::frameTime) {
-		myCamera.setDeltaTime(Globals::frameTime);
-		totalTime -= Globals::frameTime;
-		//angle += step;
-		//if(angle >= 3.14 * 2)
-			//angle -= 3.14 * 2;
-	}
-
+	sm->Update(deltaTime);
 }
 
 void Key(ESContext* esContext, unsigned char key, bool bIsPressed)
@@ -190,51 +65,51 @@ void Key(ESContext* esContext, unsigned char key, bool bIsPressed)
 	switch (key)
 	{
 	case 'W': case 'w':
-		myCamera.moveOz(-1);   // inainte
+		myCamera->moveOz(-1);   // inainte
 		break;
 
 	case 'S': case 's':
-		myCamera.moveOz(1);    // inapoi
+		myCamera->moveOz(1);    // inapoi
 		break;
 
 	case 'A': case 'a':
-		myCamera.moveOx(-1);   // stanga
+		myCamera->moveOx(-1);   // stanga
 		break;
 
 	case 'D': case 'd':
-		myCamera.moveOx(1);    // dreapta
+		myCamera->moveOx(1);    // dreapta
 		break;
 
 	case 'Q': case 'q':
-		myCamera.moveOy(1);    // sus
+		myCamera->moveOy(1);    // sus
 		break;
 
 	case 'E': case 'e':
-		myCamera.moveOy(-1);   // jos
+		myCamera->moveOy(-1);   // jos
 		break;
 
 	case VK_UP:
-		myCamera.rotateOx(-1);
+		myCamera->rotateOx(-1);
 		break;
 
 	case VK_DOWN:
-		myCamera.rotateOx(1);
+		myCamera->rotateOx(1);
 		break;
 
 	case VK_LEFT:
-		myCamera.rotateOy(-1);
+		myCamera->rotateOy(-1);
 		break;
 
 	case VK_RIGHT:
-		myCamera.rotateOy(1);
+		myCamera->rotateOy(1);
 		break;
 
 	case 'Z': case 'z':
-		myCamera.rotateOz(-1);
+		myCamera->rotateOz(-1);
 		break;
 
 	case 'X': case 'x':
-		myCamera.rotateOz(1);
+		myCamera->rotateOz(1);
 		break;
 	}
 }
@@ -245,30 +120,30 @@ void Mouse(ESContext* esContext, MouseButtons btn, MouseEvents event, int x, int
 	{
 		case MOUSE_LEFT:
 		if (event == BTN_DOWN && x < Globals::screenWidth / 2) {
-			myCamera.rotateOx(-1);
+			myCamera->rotateOx(-1);
 		}
 		else if (event == BTN_DOWN && x > Globals::screenWidth / 2){
-			myCamera.rotateOx(1);
+			myCamera->rotateOx(1);
 		}
 		else if (event == BTN_UP && x < Globals::screenWidth / 2) {
-			myCamera.rotateOx(-1);
+			myCamera->rotateOx(-1);
 		}
 		else if (event == BTN_UP && x > Globals::screenWidth / 2){
-			myCamera.rotateOx(1);
+			myCamera->rotateOx(1);
 		}
 		break;
 		case MOUSE_RIGHT:
 			if (event == BTN_DOWN && x < Globals::screenWidth / 2) {
-				myCamera.rotateOy(-1);
+				myCamera->rotateOy(-1);
 			}
 			else if (event == BTN_DOWN && x > Globals::screenWidth / 2) {
-				myCamera.rotateOy(1);
+				myCamera->rotateOy(1);
 			}
 			else if (event == BTN_UP && x < Globals::screenWidth / 2) {
-				myCamera.rotateOy(-1);
+				myCamera->rotateOy(-1);
 			}
 			else if (event == BTN_UP && x > Globals::screenWidth / 2) {
-				myCamera.rotateOy(1);
+				myCamera->rotateOy(1);
 			}
 		break;
 	}
@@ -276,9 +151,8 @@ void Mouse(ESContext* esContext, MouseButtons btn, MouseEvents event, int x, int
 
 void CleanUp()
 {
-	glDeleteBuffers(1, &modelVboId);
-	glDeleteBuffers(1, &modelIboId);
-	glDeleteTextures(1, &idTexture);
+	glDeleteBuffers(1, &vboId);
+	glDeleteBuffers(1, &vbold);
 }
 
 int _tmain(int argc, _TCHAR* argv[])

@@ -13,6 +13,10 @@
     #include <new> // For placement new
 #endif
 
+#ifdef new
+#undef new
+#endif
+
 // On MSVC, disable "conditional expression is constant" warning (level 4). 
 // This warning is almost impossible to avoid with certain types of templated code
 #ifdef _MSC_VER

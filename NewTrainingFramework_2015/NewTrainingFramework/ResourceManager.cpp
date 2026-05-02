@@ -1,18 +1,16 @@
 #include "stdafx.h"
 #include "ResourceManager.h"
-//// 1. Include standard memory and exception headers first
-//#include <memory>
-//#include <exception>
-//#include <stdexcept>
-//
-//// 2. This macro tells RapidXML to use standard C++ exceptions 
-//// instead of trying to define its own weird memory handlers.
-//#define RAPIDXML_NO_EXCEPTIONS
+#ifdef new
+#pragma message("WARNING: 'new' is a macro here!")
+#endif
 #include "rapidxml.hpp"
 #include "rapidxml_utils.hpp"
 
 ResourceManager* ResourceManager::spInstance = NULL;
 
+ResourceManager::ResourceManager()
+{
+}
 
 void ResourceManager::Init()
 {
@@ -154,12 +152,26 @@ Texture* ResourceManager::loadTexture(int id) {
 }
 
 Shader* ResourceManager::loadShader(int id) {
-    if (this->shaders.count(id))
-        return shaders[id];
+	printf("loadShader called with id: %d\n", id);
 
-    Shader* newshader = new Shader();
-    newshader->sr = shaderResources[id];
-    newshader->Load();
-    shaders.insert({ id, newshader });
-    return newshader;
+	if (this->shaders.count(id)) {
+		printf("Shader %d already cached, returning early\n", id);
+		return shaders[id];
+	}
+
+	if (!shaderResources.count(id)) {
+		printf("ERROR: ShaderResource id %d not found in shaderResources!\n", id);
+		printf("Available shader ids: ");
+		for (auto& pair : shaderResources)
+			printf("%d ", pair.first);
+		printf("\n");
+		return nullptr;
+	}
+
+	printf("Creating new shader %d, VS: %s\n", id, shaderResources[id]->fileVS.c_str());
+	Shader* newshader = new Shader();
+	newshader->sr = shaderResources[id];
+	newshader->Load();
+	shaders.insert({ id, newshader });
+	return newshader;
 }

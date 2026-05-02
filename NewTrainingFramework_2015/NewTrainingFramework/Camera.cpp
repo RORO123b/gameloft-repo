@@ -5,7 +5,7 @@
 
 Camera::Camera()
 {
-    position = Vector3(0.0f, 0.0f, 200.0f);
+    position = Vector3(0.0f, 0.0f, -500.0f);
     target = Vector3(0.0f, 0.0f, 0.0f);
     up = Vector3(0.0f, 1.0f, 0.0f);
 

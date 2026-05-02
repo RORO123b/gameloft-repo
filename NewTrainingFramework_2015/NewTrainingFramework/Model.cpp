@@ -1,11 +1,9 @@
 #pragma once
 #include "stdafx.h"
 #include "Model.h"
-#include "../Utilities/Math.h"
-#include <vector>
-#include "Vertex.h"
 
-void ReadNfg(const char* filename, std::vector<Vertex>& vertices, std::vector<unsigned short>& indices)
+
+void Model::ReadNfg(const char* filename, std::vector<Vertex>& vertices, std::vector<unsigned short>& indices)
 {
 	FILE* f = fopen(filename, "r");
 
@@ -64,8 +62,8 @@ void Model::Load() {
 
 	ReadNfg(mr->file.c_str(), vertices, indices);
 
-	this->indexCount = vertices.size();
-	int vertexCount = indices.size();
+	this->indexCount = indices.size();
+	int vertexCount = vertices.size();
 
 	glGenBuffers(1, &vboId);
 	glBindBuffer(GL_ARRAY_BUFFER, vboId);

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resourceManager>
+	<models>
+		<folder path="Res/Models/">
+			<model id="1">
+				<file>croco.nfg</file>
+			</model>
+		</folder>
+
+		<!-- un tag folder doar specifica folderul comun pentru un grup de modele (pot sa le am in mai multe foldere)
+		<folder path="Res/Models2/">
+			<model id="1001">
+				<file>altceva.nfg</file>
+			</model>
+		</folder>
+		-->
+		<!-- si aici se adauga toate modelele necesare -->
+	</models>
+	<shaders>
+		<folder path="Res/Shaders/">
+			<shader id="10">
+				<vs>ModelShaderVS.vs</vs>
+				<fs>ModelShaderFS.fs</fs>
+			</shader>
+		<!-- si aici se adauga toate shaderele -->
+		</folder>
+		
+	</shaders>
+	<textures>
+		<folder path="Res/Textures/">
+			<texture id="4" type="2d">
+				<file>croco.tga</file>			
+				<min_filter>LINEAR</min_filter>
+				<mag_filter>LINEAR</mag_filter>
+				<wrap_s>CLAMP_TO_EDGE</wrap_s>
+				<wrap_t>CLAMP_TO_EDGE</wrap_t>
+			</texture>
+		</folder>
+	</textures>	
+</resourceManager>

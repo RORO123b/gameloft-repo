@@ -13,15 +13,16 @@ Shader::~Shader() {
 
 void Shader::Load()
 {
-	char* charFileVS = new char;
-	char* charFileFS = new char;
-	charFileVS = (char*)(sr->fileVS.c_str());
-	charFileFS = (char*)(sr->fileFS.c_str());
+	const char* charFileVS = sr->fileVS.c_str();
+	const char* charFileFS = sr->fileFS.c_str();
 
-	vertexShader = esLoadShader(GL_VERTEX_SHADER, charFileVS);
+	vertexShader = esLoadShader(GL_VERTEX_SHADER, const_cast<char*>(charFileVS));
+	if (vertexShader == 0)
+	{
+		return;
+	}
 
-	fragmentShader = esLoadShader(GL_FRAGMENT_SHADER, charFileFS);
-
+	fragmentShader = esLoadShader(GL_FRAGMENT_SHADER, const_cast<char*>(charFileFS));
 	if (fragmentShader == 0)
 	{
 		glDeleteShader(vertexShader);
@@ -54,4 +55,6 @@ void Shader::Load()
 
 	MVP = glGetUniformLocation(program, "uMVP");
 	uvOffsetUniform = glGetUniformLocation(program, "u_uvOffset");
+	printf("Shader program id: %d for VS: %s\n", program, sr->fileVS.c_str());
+
 }

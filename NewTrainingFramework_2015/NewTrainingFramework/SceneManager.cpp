@@ -35,9 +35,30 @@ void SceneManager::Init()
 	{
 		if (strcmp(node->name(), "cameras") == 0)
 		{
-			for (rapidxml::xml_node<>* folder = node->first_node("camera"); folder; folder = folder->next_sibling())
+			for (rapidxml::xml_node<>* camNode = node->first_node("camera"); camNode; camNode = camNode->next_sibling())
 			{
-				/////////////////////////////////////////// de parsat pentru toate camerele
+				Camera* camera = new Camera();
+
+				camera->position.x = std::stof(camNode->first_node("position")->first_node("x")->value());
+				camera->position.y = std::stof(camNode->first_node("position")->first_node("y")->value());
+				camera->position.z = std::stof(camNode->first_node("position")->first_node("z")->value());
+
+				camera->target.x = std::stof(camNode->first_node("target")->first_node("x")->value());
+				camera->target.y = std::stof(camNode->first_node("target")->first_node("y")->value());
+				camera->target.z = std::stof(camNode->first_node("target")->first_node("z")->value());
+
+				camera->up.x = std::stof(camNode->first_node("up")->first_node("x")->value());
+				camera->up.y = std::stof(camNode->first_node("up")->first_node("y")->value());
+				camera->up.z = std::stof(camNode->first_node("up")->first_node("z")->value());
+
+				camera->moveSpeed = std::stof(camNode->first_node("translationSpeed")->value());
+				camera->rotateSpeed = std::stof(camNode->first_node("rotationSpeed")->value());
+				camera->fov = std::stof(camNode->first_node("fov")->value());
+				camera->nearPlane = std::stof(camNode->first_node("near")->value());
+				camera->farPlane = std::stof(camNode->first_node("far")->value());
+
+				camera->updateWorldView();
+				cameras.push_back(camera);
 			}
 		}
 		if (strcmp(node->name(), "objects") == 0)
@@ -59,22 +80,18 @@ void SceneManager::Init()
 				so->name = object->first_node("name")->value();
 				// so->depth_test = std::stoi(object->first_node("depth_test")->value());
 
-				rm->loadShader(std::stoi(object->first_node("shader")->value()));
-				so->shader = rm->loadedShaders[std::stoi(object->first_node("shader")->value())];
+				so->shader = rm->loadShader(std::stoi(object->first_node("shader")->value()));
 
 				int k = 0;
 				for (rapidxml::xml_node<>* texture = object->first_node("textures")->first_node("texture"); texture; texture = texture->next_sibling())
 				{
-					rm->loadTexture(std::stoi(texture->first_attribute("id")->value()));
-					so->textures.push_back(rm->loadedTextures[std::stoi(texture->first_attribute("id")->value())]);
+					so->textures.push_back(rm->loadTexture(std::stoi(texture->first_attribute("id")->value())));
 					k++;
 				}
 
 				if (so->type == "normal")
 				{
-					rm->loadModel(std::stoi(object->first_node("model")->value()));
-
-					so->model = rm->loadedModels[std::stoi(object->first_node("model")->value())];
+					so->model = rm->loadModel(std::stoi(object->first_node("model")->value()));
 
 					objects.insert(std::pair<int, SceneObject*>(so->id, so));
 				}

@@ -110,10 +110,10 @@
     <None Include="..\Resources\Shaders\LineShaderVS.vs">
       <Filter>Resources\Shaders</Filter>
     </None>
-    <None Include="..\Resources\Shaders\modelShaderFS.fs">
+    <None Include="..\Resources\Shaders\ModelShaderFS.fs">
       <Filter>Resources\Shaders</Filter>
     </None>
-    <None Include="..\Resources\Shaders\modelShaderVS.vs">
+    <None Include="..\Resources\Shaders\ModelShaderVS.vs">
       <Filter>Resources\Shaders</Filter>
     </None>
   </ItemGroup>
