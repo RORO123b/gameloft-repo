@@ -2,6 +2,8 @@
 #include "SceneManager.h"
 #include "SceneObject.h"
 #include "ResourceManager.h"
+#include "Terrain.h"
+#include "SkyBox.h"
 
 SceneManager* SceneManager::spInstance = NULL;
 
@@ -94,6 +96,25 @@ void SceneManager::Init()
 					so->model = rm->loadModel(std::stoi(object->first_node("model")->value()));
 
 					objects.insert(std::pair<int, SceneObject*>(so->id, so));
+				}
+				else if (so->type == "terrain")
+				{
+					Terrain* terrain = new Terrain(so);
+
+					rapidxml::xml_node<>* heightsNode = object->first_node("heights");
+					float heightR = std::stof(heightsNode->first_node("r")->value());
+					float heightG = std::stof(heightsNode->first_node("g")->value());
+					float heightB = std::stof(heightsNode->first_node("b")->value());
+					terrain->terrainHeights = Vector3(heightR, heightG, heightB);
+
+					objects.insert(std::pair<int, SceneObject*>(terrain->id, terrain));
+				}
+				else if (so->type == "skybox")
+				{
+					so->model = rm->loadModel(std::stoi(object->first_node("model")->value()));
+
+					SkyBox* skybox = new SkyBox(so);
+					objects.insert(std::pair<int, SceneObject*>(skybox->id, skybox));
 				}
 			}
 		}

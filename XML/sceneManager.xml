@@ -262,8 +262,65 @@
 				<light>1</light>
 			</lights>
 		</object -->
-    
-    
+
+	  <object id="13">
+		  <model>generated</model>
+		  <shader>3</shader>
+		  <type>terrain</type>
+		  <name>Teren</name>
+		  <heights>
+			  <r>15</r>
+			  <g>5</g>
+			  <b>-5</b>
+		  </heights>
+		  <textures>
+			  <texture id="17"/>
+			  <texture id="14"/>
+			  <texture id="15"/>
+			  <texture id="16"/>
+		  </textures>
+		  <position>
+			  <x>0</x>
+			  <y>0</y>
+			  <z>0</z>
+		  </position>
+		  <rotation>
+			  <x>0.0</x>
+			  <y>0.0</y>
+			  <z>0.0</z>
+		  </rotation>
+		  <scale>
+			  <x>1.0</x>
+			  <y>1.0</y>
+			  <z>1.0</z>
+		  </scale>
+	  </object>
+	  <object id="18">
+		  <model>20</model>
+		  <shader>23</shader>
+		  <type>skybox</type>
+		  <name>Cer</name>
+		  <textures>
+			  <texture id="21"/>
+		  </textures>
+		  <position>
+			  <x>0</x>
+			  <y>0</y>
+			  <z>0</z>
+		  </position>
+		  <rotation>
+			  <x>3.141592653</x>
+			  <y>0.0</y>
+			  <z>0.0</z>
+		  </rotation>
+		  <scale>
+			  <x>1000.0</x>
+			  <y>1000.0</y>
+			  <z>1000.0</z>
+		  </scale>
+	  </object>
+
+
   </objects>
 
   <!--

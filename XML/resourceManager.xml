@@ -5,6 +5,9 @@
 			<model id="1">
 				<file>croco.nfg</file>
 			</model>
+			<model id="20">
+				<file>SkyBox.nfg</file>
+			</model>
 		</folder>
 
 		<!-- un tag folder doar specifica folderul comun pentru un grup de modele (pot sa le am in mai multe foldere)
@@ -22,6 +25,14 @@
 				<vs>ModelShaderVS.vs</vs>
 				<fs>ModelShaderFS.fs</fs>
 			</shader>
+			<shader id="3">
+				<vs>TerrainShaderVS.vs</vs>
+				<fs>TerrainShaderFS.fs</fs>
+			</shader>
+			<shader id="23">
+				<vs>SkyboxShaderVS.vs</vs>
+				<fs>SkyboxShaderFS.fs</fs>
+			</shader>
 		<!-- si aici se adauga toate shaderele -->
 		</folder>
 		
@@ -35,6 +46,43 @@
 				<wrap_s>CLAMP_TO_EDGE</wrap_s>
 				<wrap_t>CLAMP_TO_EDGE</wrap_t>
 			</texture>
+			<texture id="14" type="2d">
+				<file>dirt.tga</file>
+				<min_filter>LINEAR</min_filter>
+				<mag_filter>LINEAR</mag_filter>
+				<wrap_s>REPEAT</wrap_s>
+				<wrap_t>REPEAT</wrap_t>
+			</texture>
+			<texture id="15" type="2d">
+				<file>rock.tga</file>
+				<min_filter>LINEAR</min_filter>
+				<mag_filter>LINEAR</mag_filter>
+				<wrap_s>REPEAT</wrap_s>
+				<wrap_t>REPEAT</wrap_t>
+			</texture>
+			<texture id="16" type="2d">
+				<file>grass.tga</file>
+				<min_filter>LINEAR</min_filter>
+				<mag_filter>LINEAR</mag_filter>
+				<wrap_s>REPEAT</wrap_s>
+				<wrap_t>REPEAT</wrap_t>
+			</texture>
+			<texture id="17" type="2d">
+				<file>Terrain_blend_map.tga</file>
+				<min_filter>LINEAR</min_filter>
+				<mag_filter>LINEAR</mag_filter>
+				<wrap_s>REPEAT</wrap_s>
+				<wrap_t>REPEAT</wrap_t>
+			</texture>
+			<texture id="21">
+				<file>envMap.tga</file>
+				<type>cube</type>
+				<min_filter>LINEAR</min_filter>
+				<mag_filter>LINEAR</mag_filter>
+				<wrap_s>CLAMP_TO_EDGE</wrap_s>
+				<wrap_t>CLAMP_TO_EDGE</wrap_t>
+			</texture>
+
 		</folder>
 	</textures>	
 </resourceManager>

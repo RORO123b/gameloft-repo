@@ -27,6 +27,6 @@ public:
 
     void Draw(ESContext* esContext);
     void sendCommonData(ESContext* esContext);
-    void sendSpecificData(ESContext* esContext);
-    void Update(float deltaTime);
+    virtual void sendSpecificData(ESContext* esContext);
+    virtual void Update(float deltaTime);
 };
