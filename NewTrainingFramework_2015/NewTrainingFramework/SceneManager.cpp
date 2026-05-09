@@ -12,7 +12,6 @@ SceneManager::SceneManager()
 
 }
 
-
 void SceneManager::Init()
 {
 	totalTime = 0.0f;
@@ -26,12 +25,6 @@ void SceneManager::Init()
 	rapidxml::xml_document<> doc;
 	doc.parse<0>(buffer);
 	rapidxml::xml_node<>* root = doc.first_node("sceneManager");
-
-	///
-	Camera* camera = new Camera();
-	cameras.push_back(camera);
-
-	///
 
 	for (rapidxml::xml_node<>* node = root->first_node(); node; node = node->next_sibling())
 	{
@@ -59,9 +52,21 @@ void SceneManager::Init()
 				camera->nearPlane = std::stof(camNode->first_node("near")->value());
 				camera->farPlane = std::stof(camNode->first_node("far")->value());
 
+				camera->perspectiveMatrix.SetPerspective(camera->fov, Globals::screenWidth / Globals::screenHeight, camera->nearPlane, camera->farPlane);
+				camera->updateAxes();
 				camera->updateWorldView();
 				cameras.push_back(camera);
 			}
+		}
+		if (strcmp(node->name(), "fog") == 0)
+		{
+			rapidxml::xml_node<>* colorNode = node->first_node("color");
+			fogColor.x = std::stof(colorNode->first_node("r")->value());
+			fogColor.y = std::stof(colorNode->first_node("g")->value());
+			fogColor.z = std::stof(colorNode->first_node("b")->value());
+
+			smallRadius = std::stof(node->first_node("smallRadius")->value());
+			largeRadius = std::stof(node->first_node("largeRadius")->value());
 		}
 		if (strcmp(node->name(), "objects") == 0)
 		{

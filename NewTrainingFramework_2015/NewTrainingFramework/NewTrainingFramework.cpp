@@ -89,19 +89,19 @@ void Key(ESContext* esContext, unsigned char key, bool bIsPressed)
 		break;
 
 	case VK_UP:
-		myCamera->rotateOx(-1);
-		break;
-
-	case VK_DOWN:
 		myCamera->rotateOx(1);
 		break;
 
+	case VK_DOWN:
+		myCamera->rotateOx(-1);
+		break;
+
 	case VK_LEFT:
-		myCamera->rotateOy(-1);
+		myCamera->rotateOy(1);
 		break;
 
 	case VK_RIGHT:
-		myCamera->rotateOy(1);
+		myCamera->rotateOy(-1);
 		break;
 
 	case 'Z': case 'z':
@@ -164,7 +164,7 @@ int _tmain(int argc, _TCHAR* argv[])
 
     esInitContext ( &esContext );
 
-	esCreateWindow ( &esContext, "Hello Triangle", Globals::screenWidth, Globals::screenHeight, ES_WINDOW_RGB | ES_WINDOW_DEPTH);
+	esCreateWindow ( &esContext, "Game Engine", Globals::screenWidth, Globals::screenHeight, ES_WINDOW_RGB | ES_WINDOW_DEPTH);
 
 	if ( Init ( &esContext ) != 0 )
 		return 0;

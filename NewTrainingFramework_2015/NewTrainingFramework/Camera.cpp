@@ -82,8 +82,7 @@ void Camera::updateWorldView()
 
 void Camera::moveOx(int sens)
 {
-    Vector3 forward =  Vector3(1.0f, 0.0f, 0.0f) * sens;
-    Vector3 vectorDeplasare = forward * moveSpeed * deltaTime;
+    Vector3 vectorDeplasare = xAxis * sens * moveSpeed * deltaTime;
     position += vectorDeplasare;
     target += vectorDeplasare;
     updateAxes();
@@ -92,8 +91,7 @@ void Camera::moveOx(int sens)
 
 void Camera::moveOy(int sens)
 {
-    Vector3 forward =  Vector3(0.0f, 1.0f, 0.0f) * sens;
-    Vector3 vectorDeplasare = forward * moveSpeed * deltaTime;
+    Vector3 vectorDeplasare = yAxis * sens * moveSpeed * deltaTime;
     position += vectorDeplasare;
     target += vectorDeplasare;
     updateAxes();
@@ -102,8 +100,7 @@ void Camera::moveOy(int sens)
 
 void Camera::moveOz(int sens)
 {
-    Vector3 forward =  Vector3(0.0f, 0.0f, 1.0f) * sens;
-    Vector3 vectorDeplasare = forward * moveSpeed * deltaTime;
+    Vector3 vectorDeplasare = zAxis * sens * moveSpeed * deltaTime;
     position += vectorDeplasare;
     target += vectorDeplasare;
     updateAxes();

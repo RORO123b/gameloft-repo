@@ -5,6 +5,9 @@
 			<model id="1">
 				<file>croco.nfg</file>
 			</model>
+			<model id="2">
+				<file>train.nfg</file>
+			</model>
 			<model id="20">
 				<file>SkyBox.nfg</file>
 			</model>
@@ -41,6 +44,13 @@
 		<folder path="Res/Textures/">
 			<texture id="4" type="2d">
 				<file>croco.tga</file>			
+				<min_filter>LINEAR</min_filter>
+				<mag_filter>LINEAR</mag_filter>
+				<wrap_s>CLAMP_TO_EDGE</wrap_s>
+				<wrap_t>CLAMP_TO_EDGE</wrap_t>
+			</texture>
+			<texture id="5" type="2d">
+				<file>train.tga</file>
 				<min_filter>LINEAR</min_filter>
 				<mag_filter>LINEAR</mag_filter>
 				<wrap_s>CLAMP_TO_EDGE</wrap_s>

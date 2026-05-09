@@ -21,6 +21,7 @@ void SceneObject::Draw(ESContext* esContext)
 	SceneManager* sm = SceneManager::getInstance();
 
 	sendCommonData(esContext);
+	shader->SetFogParameters(sm->fogColor, sm->smallRadius, sm->largeRadius);
 	sendSpecificData(esContext);
 
 
@@ -99,7 +100,10 @@ void SceneObject::sendCommonData(ESContext* esContext)
 		glEnableVertexAttribArray(shader->normalAttribute);
 		glVertexAttribPointer(shader->normalAttribute, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, norm));
 	}
-
+	
+	if (shader->cameraPosUniform != -1) {
+		glUniform3f(shader->cameraPosUniform, camera->position.x, camera->position.y, camera->position.z);
+	}
 
 	glUniform3f(glGetUniformLocation(shader->program, "u_ambientColor"), sm->ambientColor.x, sm->ambientColor.y, sm->ambientColor.z);
 	glUniform1f(glGetUniformLocation(shader->program, "u_ambientRatio"), sm->ambientRatio);

@@ -24,4 +24,5 @@ public:
 	Shader();
 	~Shader();
 	void Load();
+	void SetFogParameters(Vector3& fogColor, float smallRadius, float largeRadius);
 };

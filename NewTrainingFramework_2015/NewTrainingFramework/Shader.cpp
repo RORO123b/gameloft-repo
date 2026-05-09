@@ -58,3 +58,12 @@ void Shader::Load()
 	printf("Shader program id: %d for VS: %s\n", program, sr->fileVS.c_str());
 
 }
+void Shader::SetFogParameters(Vector3& fogColor, float smallRadius, float largeRadius)
+{
+	if (fogColorUniform != -1)
+		glUniform3f(fogColorUniform, fogColor.x, fogColor.y, fogColor.z);
+	if (smallRadiusUniform != -1)
+		glUniform1f(smallRadiusUniform, smallRadius);
+	if (largeRadiusUniform != -1)
+		glUniform1f(largeRadiusUniform, largeRadius);
+}

@@ -4,11 +4,13 @@ attribute vec3 a_posL;
 attribute vec2 a_uv, a_uv2;
 
 uniform mat4 uMVP;
+uniform mat4 u_model;
 uniform vec3 u_height;
 uniform sampler2D u_texture_0;
 uniform vec2 u_uvOffset;
 
 varying vec2 v_uv, v_uv2;
+varying vec3 v_worldPos;
 
 void main()
 {
@@ -21,4 +23,6 @@ void main()
 	new_pos.y += c_blend.r * u_height.r + c_blend.g * u_height.g + c_blend.b * u_height.b;
 
 	gl_Position = uMVP * new_pos;
+
+	v_worldPos = (u_model * vec4(a_posL, 1.0)).xyz;
 }
