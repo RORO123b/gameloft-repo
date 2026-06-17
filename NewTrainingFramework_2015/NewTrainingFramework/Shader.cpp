@@ -55,7 +55,6 @@ void Shader::Load()
 
 	MVP = glGetUniformLocation(program, "uMVP");
 	uvOffsetUniform = glGetUniformLocation(program, "u_uvOffset");
-	printf("Shader program id: %d for VS: %s\n", program, sr->fileVS.c_str());
 
 }
 void Shader::SetFogParameters(Vector3& fogColor, float smallRadius, float largeRadius)

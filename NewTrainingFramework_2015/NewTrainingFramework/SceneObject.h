@@ -1,32 +1,38 @@
 #pragma once
-#include "stdafx.h"
-#include "../Utilities/Math.h"
+#include "../Utilities/utilities.h"
 #include <vector>
+#include "Model.h"
+#include "Shader.h"
+#include "Texture.h"
+#include "Camera.h"
+#include "SceneManager.h"
+#include "ResourceManager.h"
 #include <string>
 
-class Model;
-class Shader;
-class Texture;
 
 class SceneObject
 {
 public:
-    int id;
-    Vector3 position;
-    Vector3 rotation;
-    Vector3 scale;
-    Model* model;
-    Shader* shader;
-    std::vector<Texture*> textures;
-    std::string type;
-    std::string name;
-    int depth_test;
 
-    virtual float getKspec() const;
-    virtual float getKdiff() const;
+	int id;
+	Model* model;
+	Shader* shader;
+	std::vector<Texture*> textures;
+	Vector3 position, rotation, scale;
+	std::string type, name;
+	bool depth_test;
+	
+	virtual float getKspec() const;
+	virtual float getKdiff() const;
+	void Draw(ESContext* esContext);
 
-    void Draw(ESContext* esContext);
-    void sendCommonData(ESContext* esContext);
-    virtual void sendSpecificData(ESContext* esContext);
-    virtual void Update(float deltaTime);
+	virtual void sendCommonData(ESContext* esContext);
+
+	virtual void sendSpecificData(ESContext* esContext);
+
+	virtual void Update(float deltaTime);
+
+	SceneObject() {};
+
+	virtual ~SceneObject() {};
 };

@@ -1,13 +1,6 @@
 #include "stdafx.h"
 #include "SceneObject.h"
-#include "../Utilities/Math.h"
-#include "Model.h"
-#include "Shader.h"
-#include "Texture.h"
-#include "Vertex.h"
-#include "SceneManager.h"
-#include "ResourceManager.h"
-#include <vector>
+
 
 float SceneObject::getKspec() const {
 	return 1.0f;
@@ -107,6 +100,18 @@ void SceneObject::sendCommonData(ESContext* esContext)
 
 	glUniform3f(glGetUniformLocation(shader->program, "u_ambientColor"), sm->ambientColor.x, sm->ambientColor.y, sm->ambientColor.z);
 	glUniform1f(glGetUniformLocation(shader->program, "u_ambientRatio"), sm->ambientRatio);
+
+	glUniform1i(glGetUniformLocation(shader->program, "u_numLights"), sm->lights.size());
+	for (int i = 0; i < sm->lights.size(); ++i) {
+		glUniform3fv(glGetUniformLocation(shader->program, ("u_lightPositions[" + std::to_string(i) + "]").c_str()), 1, &(sm->lights[i])->position.x);
+		glUniform3fv(glGetUniformLocation(shader->program, ("u_lightDirections[" + std::to_string(i) + "]").c_str()), 1, &(sm->lights[i])->direction.x);
+		glUniform3fv(glGetUniformLocation(shader->program, ("u_lightDiffuse[" + std::to_string(i) + "]").c_str()), 1, &(sm->lights[i])->colorDiffuse.x);
+		glUniform3fv(glGetUniformLocation(shader->program, ("u_lightSpecular[" + std::to_string(i) + "]").c_str()), 1, &(sm->lights[i])->colorSpecular.x);
+		glUniform1f(glGetUniformLocation(shader->program, ("u_lightSpecPower[" + std::to_string(i) + "]").c_str()), sm->lights[i]->specPower);
+		glUniform1i(glGetUniformLocation(shader->program, ("u_lightTypes[" + std::to_string(i) + "]").c_str()), sm->lights[i]->type);
+		glUniform1f(glGetUniformLocation(shader->program, ("u_lightSpotCutoff[" + std::to_string(i) + "]").c_str()), sm->lights[i]->spotCutoff);
+		glUniform1f(glGetUniformLocation(shader->program, ("u_lightSpotExponent[" + std::to_string(i) + "]").c_str()), sm->lights[i]->spotExponent);
+	}
 
 	glUniform1f(glGetUniformLocation(shader->program, "u_kspec"), this->getKspec());
 	glUniform1f(glGetUniformLocation(shader->program, "u_kdiff"), this->getKdiff());

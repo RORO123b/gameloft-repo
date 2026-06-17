@@ -2,19 +2,25 @@ c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtraini
 c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\vc143.pdb
 c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\vc143.idb
 c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\stdafx.obj
-c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\shaders.obj
+c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\camera.obj
+c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\fire.obj
+c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\globals.obj
+c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\math.obj
+c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\model.obj
 c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\newtrainingframework.obj
+c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\reflectedobject.obj
+c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\resourcemanager.obj
+c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\scenemanager.obj
+c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\sceneobject.obj
+c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\shader.obj
+c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\shaders.obj
+c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\skybox.obj
+c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\terrain.obj
+c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\texture.obj
 c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\bin-nvidia\newtrainingframework.exe
 c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\bin-nvidia\newtrainingframework.pdb
-d:\training gameloft\proiecte_training\proiect_2015\newtrainingframework_2015\bin-nvidia\newtrainingframework.ipdb
-d:\training gameloft\proiecte_training\proiect_2015\newtrainingframework_2015\bin-nvidia\newtrainingframework.iobj
-c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\bin-nvidia\newtrainingframework.ipdb
-c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\bin-nvidia\newtrainingframework.iobj
 c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\newtrainingframework.ilk
-c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\vc141.idb
-c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\vc141.pdb
 c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\\bin-nvidia\newtrainingframework.pdb
-c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\\bin-nvidia\newtrainingframework.ilk
 c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\newtrain.fc024ec8.tlog\cl.command.1.tlog
 c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\newtrain.fc024ec8.tlog\cl.items.tlog
 c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\newtrain.fc024ec8.tlog\cl.read.1.tlog
@@ -23,4 +29,3 @@ c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtraini
 c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\newtrain.fc024ec8.tlog\link.read.1.tlog
 c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\newtrain.fc024ec8.tlog\link.secondary.1.tlog
 c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\newtrain.fc024ec8.tlog\link.write.1.tlog
-c:\users\vboxuser\source\repos\gameloft-repo\newtrainingframework_2015\newtrainingframework\debug-nvidia\newtrain.fc024ec8.tlog\newtrainingframework.write.1u.tlog

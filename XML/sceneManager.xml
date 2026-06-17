@@ -68,26 +68,26 @@
     <largeRadius>400.0</largeRadius>
   </fog>
 
-  <lights>
-    <light id="1" type="point">
-      <position>
-        <x>20.5</x>
-        <y>0</y>
-        <z>121.22</z>
-      </position>
-      <diffuse>
-        <r>0.5</r>
-        <g>0.5</g>
-        <b>0.5</b>
-      </diffuse>
-      <specular>
-        <r>0.5</r>
-        <g>0.5</g>
-        <b>0.5</b>
-      </specular>
-      <specPower>32</specPower>
-    </light>
-    <!--light id="2" type="directional">
+	<lights>
+		<light id="1" type="point">
+			<position>
+				<x>3.2</x>
+				<y>1.2</y>
+				<z>-92</z>
+			</position>
+			<diffuse>
+				<r>0.5</r>
+				<g>0.5</g>
+				<b>0.5</b>
+			</diffuse>
+			<specular>
+				<r>0.5</r>
+				<g>0.5</g>
+				<b>0.5</b>
+			</specular>
+			<specPower>32</specPower>
+		</light>
+		<!--light id="2" type="directional">
       <direction>
         <x>-1</x>
         <y>-1</y>
@@ -106,32 +106,32 @@
       <specPower>16</specPower>
     </light-->
 
-    <light id="3" type="spot">
-      <position>
-        <x>220</x>
-        <y>27</y>
-        <z>-90</z>
-      </position>
-      <direction>
-        <x>0.0</x>
-        <y>0.0</y>
-        <z>1.0</z>
-      </direction>
-      <spotCutoff>30.0</spotCutoff>
-      <spotExponent>30.0</spotExponent>
-      <diffuse>
-        <r>1.0</r>
-        <g>1.0</g>
-        <b>1.0</b>
-      </diffuse>
-      <specular>
-        <r>1.0</r>
-        <g>1.0</g>
-        <b>1.0</b>
-      </specular>
-      <specPower>64.0</specPower>
-    </light>
-  </lights>
+		<light id="3" type="spot">
+			<position>
+				<x>-151</x>
+				<y>42</y>
+				<z>-3</z>
+			</position>
+			<direction>
+				<x>0.0</x>
+				<y>1.0</y>
+				<z>0.0</z>
+			</direction>
+			<spotCutoff>30.0</spotCutoff>
+			<spotExponent>30.0</spotExponent>
+			<diffuse>
+				<r>1.0</r>
+				<g>1.0</g>
+				<b>1.0</b>
+			</diffuse>
+			<specular>
+				<r>1.0</r>
+				<g>1.0</g>
+				<b>1.0</b>
+			</specular>
+			<specPower>64.0</specPower>
+		</light>
+	</lights>
 
   <objects>
     <comment>
@@ -285,6 +285,88 @@
 				<light>1</light>
 			</lights>
 		</object -->
+	  <object id="8">
+		  <model>19</model>
+		  <shader>24</shader>
+		  <type>fire</type>
+		  <name>Foc</name>
+		  <textures>
+			  <texture id="31"/>
+			  <texture id="32"/>
+			  <texture id="33"/>
+		  </textures>
+		  <position>
+			  <x>-100</x>
+			  <y>0</y>
+			  <z>-200</z>
+		  </position>
+		  <rotation>
+			  <x>0</x>
+			  <y>0</y>
+			  <z>0</z>
+		  </rotation>
+		  <scale>
+			  <x>1.0</x>
+			  <y>1.0</y>
+			  <z>1.0</z>
+		  </scale>
+	  </object>
+
+	  <object id="60">
+		  <model>19</model>
+		  <shader>24</shader>
+		  <type>fire</type>
+		  <name>Foc</name>
+		  <textures>
+			  <texture id="31"/>
+			  <texture id="32"/>
+			  <texture id="33"/>
+		  </textures>
+		  <position>
+			  <x>-100</x>
+			  <y>0</y>
+			  <z>-250</z>
+		  </position>
+		  <rotation>
+			  <x>0</x>
+			  <y>0</y>
+			  <z>0</z>
+		  </rotation>
+		  <scale>
+			  <x>1.0</x>
+			  <y>1.0</y>
+			  <z>1.0</z>
+		  </scale>
+	  </object>
+	  
+    <object id="7">
+
+      <model>6</model>
+      <shader>25</shader>
+      <type>reflected</type>
+      <name>Bus</name>
+      <reflection>0.5</reflection>
+      <textures>
+        <texture id="35"/>
+        <texture id="21"/>
+      </textures>
+      <position>
+        <x>-220.5</x>
+        <y>20</y>
+        <z>21.22</z>
+      </position>
+      <rotation>
+        <x>1</x>
+        <y>0</y>
+        <z>0</z>
+      </rotation>
+      <scale>
+        <x>1.0</x>
+        <y>1.0</y>
+        <z>1.0</z>
+      </scale>
+    </object>
+
 
 	  <object id="13">
 		  <model>generated</model>

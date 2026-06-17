@@ -3,6 +3,7 @@
 #include "Shader.h"
 #include "Texture.h"
 #include "Model.h"
+#include "Light.h"
 
 
 class ResourceManager

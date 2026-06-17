@@ -4,6 +4,8 @@
 #include "ResourceManager.h"
 #include "Terrain.h"
 #include "SkyBox.h"
+#include "Fire.h"
+#include "ReflectedObject.h"
 
 SceneManager* SceneManager::spInstance = NULL;
 
@@ -56,6 +58,49 @@ void SceneManager::Init()
 				camera->updateAxes();
 				camera->updateWorldView();
 				cameras.push_back(camera);
+			}
+		}
+		if (strcmp(node->name(), "lights") == 0) {
+			for (rapidxml::xml_node<>* lightNode = node->first_node("light"); lightNode; lightNode = lightNode->next_sibling()) {
+				Light* light = new Light();
+				light->id = std::stoi(lightNode->first_attribute("id")->value());
+				std::string type = lightNode->first_attribute("type")->value();
+
+				if (type == "point") {
+					light->type = 0;
+					light->position.x = std::stof(lightNode->first_node("position")->first_node("x")->value());
+					light->position.y = std::stof(lightNode->first_node("position")->first_node("y")->value());
+					light->position.z = std::stof(lightNode->first_node("position")->first_node("z")->value());
+				}
+				else if (type == "directional") {
+					light->type = 1;
+					light->direction.x = std::stof(lightNode->first_node("direction")->first_node("x")->value());
+					light->direction.y = std::stof(lightNode->first_node("direction")->first_node("y")->value());
+					light->direction.z = std::stof(lightNode->first_node("direction")->first_node("z")->value());
+				}
+				else if (type == "spot") {
+					light->type = 2;
+					light->position.x = std::stof(lightNode->first_node("position")->first_node("x")->value());
+					light->position.y = std::stof(lightNode->first_node("position")->first_node("y")->value());
+					light->position.z = std::stof(lightNode->first_node("position")->first_node("z")->value());
+					light->direction.x = std::stof(lightNode->first_node("direction")->first_node("x")->value());
+					light->direction.y = std::stof(lightNode->first_node("direction")->first_node("y")->value());
+					light->direction.z = std::stof(lightNode->first_node("direction")->first_node("z")->value());
+					light->spotCutoff = std::stof(lightNode->first_node("spotCutoff")->value());
+					light->spotExponent = std::stof(lightNode->first_node("spotExponent")->value());
+				}
+
+				light->colorDiffuse.x = std::stof(lightNode->first_node("diffuse")->first_node("r")->value());
+				light->colorDiffuse.y = std::stof(lightNode->first_node("diffuse")->first_node("g")->value());
+				light->colorDiffuse.z = std::stof(lightNode->first_node("diffuse")->first_node("b")->value());
+
+				light->colorSpecular.x = std::stof(lightNode->first_node("specular")->first_node("r")->value());
+				light->colorSpecular.y = std::stof(lightNode->first_node("specular")->first_node("g")->value());
+				light->colorSpecular.z = std::stof(lightNode->first_node("specular")->first_node("b")->value());
+
+				light->specPower = std::stof(lightNode->first_node("specPower")->value());
+
+				lights.push_back(light);
 			}
 		}
 		if (strcmp(node->name(), "fog") == 0)
@@ -120,6 +165,22 @@ void SceneManager::Init()
 
 					SkyBox* skybox = new SkyBox(so);
 					objects.insert(std::pair<int, SceneObject*>(skybox->id, skybox));
+				}
+				else if (so->type == "fire")
+				{
+					so->model = rm->loadModel(std::stoi(object->first_node("model")->value()));
+					Fire* fire = new Fire(so);
+					objects.insert(std::pair<int, SceneObject*>(fire->id, fire));
+				}
+				else if (so->type == "reflected")
+				{
+					so->model = rm->loadModel(std::stoi(object->first_node("model")->value()));
+					ReflectedObject* reflected = new ReflectedObject(so);
+
+					float reflectedAmmount = std::stof(object->first_node("reflection")->value());
+					reflected->reflectedAmmount = reflectedAmmount;
+
+					objects.insert(std::pair<int, SceneObject*>(reflected->id, reflected));
 				}
 			}
 		}

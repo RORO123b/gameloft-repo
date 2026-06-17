@@ -8,8 +8,14 @@
 			<model id="2">
 				<file>train.nfg</file>
 			</model>
+			<model id="6">
+				<file>bus.nfg</file>
+			</model>
 			<model id="20">
 				<file>SkyBox.nfg</file>
+			</model>
+			<model id="19">
+				<file>fire.nfg</file>
 			</model>
 		</folder>
 
@@ -36,7 +42,15 @@
 				<vs>SkyboxShaderVS.vs</vs>
 				<fs>SkyboxShaderFS.fs</fs>
 			</shader>
-		<!-- si aici se adauga toate shaderele -->
+			<shader id="24">
+				<vs>FireShaderVS.vs</vs>
+				<fs>FireShaderFS.fs</fs>
+			</shader>
+			<shader id="25">
+				<vs>ReflectionShaderVS.vs</vs>
+				<fs>ReflectionShaderFS.fs</fs>
+			</shader>
+			<!-- si aici se adauga toate shaderele -->
 		</folder>
 		
 	</shaders>
@@ -87,6 +101,34 @@
 			<texture id="21">
 				<file>envMap.tga</file>
 				<type>cube</type>
+				<min_filter>LINEAR</min_filter>
+				<mag_filter>LINEAR</mag_filter>
+				<wrap_s>CLAMP_TO_EDGE</wrap_s>
+				<wrap_t>CLAMP_TO_EDGE</wrap_t>
+			</texture>
+			<texture id="31" type="2d">
+				<file>fire_mask.tga</file>
+				<min_filter>LINEAR</min_filter>
+				<mag_filter>LINEAR</mag_filter>
+				<wrap_s>CLAMP_TO_EDGE</wrap_s>
+				<wrap_t>CLAMP_TO_EDGE</wrap_t>
+			</texture>
+			<texture id="32" type="2d">
+				<file>fire3.tga</file>
+				<min_filter>LINEAR</min_filter>
+				<mag_filter>LINEAR</mag_filter>
+				<wrap_s>CLAMP_TO_EDGE</wrap_s>
+				<wrap_t>CLAMP_TO_EDGE</wrap_t>
+			</texture>
+			<texture id="33" type="2d">
+				<file>DisplacementMap.tga</file>
+				<min_filter>LINEAR</min_filter>
+				<mag_filter>LINEAR</mag_filter>
+				<wrap_s>REPEAT</wrap_s>
+				<wrap_t>REPEAT</wrap_t>
+			</texture>
+			<texture id="35" type="2d">
+				<file>bus.tga</file>
 				<min_filter>LINEAR</min_filter>
 				<mag_filter>LINEAR</mag_filter>
 				<wrap_s>CLAMP_TO_EDGE</wrap_s>

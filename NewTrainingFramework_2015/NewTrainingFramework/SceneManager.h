@@ -7,6 +7,7 @@
 #endif
 #include "rapidxml.hpp"
 #include "rapidxml_utils.hpp"
+#include "Light.h"
 #include "Globals.h"
 
 
@@ -29,6 +30,7 @@ public:
 
 	std::map<int, SceneObject*> objects;
 	std::vector<Camera*> cameras;
+	std::vector<Light*> lights;
 
 	Vector3 ambientColor = Vector3(0.2f, 0.2f, 0.2f);
 	float ambientRatio = 0.5f;

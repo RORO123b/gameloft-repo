@@ -164,10 +164,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Fire.cpp" />
     <ClCompile Include="Globals.cpp" />
+    <ClCompile Include="Light.cpp" />
     <ClCompile Include="Math.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="NewTrainingFramework.cpp" />
+    <ClCompile Include="ReflectedObject.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SceneObject.cpp" />
@@ -185,8 +188,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Fire.h" />
     <ClInclude Include="Globals.h" />
+    <ClInclude Include="Light.h" />
     <ClInclude Include="Model.h" />
+    <ClInclude Include="ReflectedObject.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SceneObject.h" />
