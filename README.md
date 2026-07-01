@@ -5,6 +5,7 @@
 A custom, from-scratch 3D rendering engine built in **C++** using **OpenGL**. This project was developed as part of the **Gameloft Game Development Workshop 2025** to explore the low-level architecture of real-time graphics systems.
 
 > **Note:** The primary focus of this repository is educational—designed to demystify the graphics pipeline, GPU interaction, and resource management without relying on commercial game engines.
+<img width="951" height="737" alt="Croco" src="https://github.com/user-attachments/assets/dd6149d1-07f8-443c-90d6-debb6b61ba0a" />
 
 ---
 
